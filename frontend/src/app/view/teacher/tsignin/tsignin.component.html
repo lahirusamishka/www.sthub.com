@@ -1,0 +1,28 @@
+<div class="section-header">
+  <h3 class="text-center">SIGN IN</h3>
+</div>
+
+<div class="col-sm">
+  <form #frmLogin="ngForm" action="" method="post" >
+
+
+    <div *ngIf="inValidLogin" class="alert alert-danger">
+       Invalid User Name or Password
+    </div>
+
+
+  <div class="form-group  ">
+    <input [(ngModel)]="user.username" name="txtUserName" id="inputusername " type="text"   class="form-control" placeholder="username">
+  </div>
+  <div class="form-group  ">
+    <input [(ngModel)]="user.password" name="txtpassword" id="inputpassword" type="password"  class="form-control"  placeholder="password">
+  </div>
+
+
+  <div class="form-group  ">
+
+    <button routerLink="/dashboard" routerLinkActive="active" type="button" (click)="login()" class="btn btn-outline-success col-md-12">Sign in</button>
+  </div>
+
+  </form>
+</div>
