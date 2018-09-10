@@ -8,6 +8,11 @@ import {AuthService} from "../../service/auth.service";
 })
 export class MainComponent implements OnInit {
 
+
+  profileName:string="No teacher";
+  profileDiscription:string="empty discription"
+
+
   constructor(private authservice:AuthService) { }
 
   ngOnInit() {

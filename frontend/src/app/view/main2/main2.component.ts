@@ -9,6 +9,8 @@ import {ParentService} from "../../service/parent.service";
 export class Main2Component implements OnInit {
 
   scrl:boolean=false;
+  profileName:string="No teacher";
+  profileDiscription:string="empty discription"
 
   constructor(private parentService:ParentService ) { }
 
