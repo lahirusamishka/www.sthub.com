@@ -18,6 +18,9 @@ import {MainComponent} from "./view/main/main.component";
 import {Main2Component} from "./view/main2/main2.component";
 import {ParentGuard} from "./guards/parent.guard";
 import {DashboardParentComponent} from "./view/main2/dashboard-parent/dashboard-parent.component";
+import {AdminGuard} from "./guards/admin.guard";
+import {AdminDashboardComponent} from "./view/main3/admin-dashboard/admin-dashboard.component";
+import {Main3Component} from "./view/main3/main3.component";
 
 
 const appRoutes: Routes = [
@@ -35,6 +38,14 @@ const appRoutes: Routes = [
     canActivate:[ParentGuard],
     children:[
       {path:"dashboard-parent", component: DashboardParentComponent}
+    ]
+  },
+  {
+     path:"main3",
+    component:Main3Component,
+    canActivate:[AdminGuard],
+    children:[
+      {path:"admin-dashboard",component: AdminDashboardComponent}
     ]
   },
   {

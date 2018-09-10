@@ -33,6 +33,10 @@ import { Main2Component } from './view/main2/main2.component';
 import {ParentService} from "./service/parent.service";
 import {ParentGuard} from "./guards/parent.guard";
 import { DashboardParentComponent } from './view/main2/dashboard-parent/dashboard-parent.component';
+import { Main3Component } from './view/main3/main3.component';
+import { AdminDashboardComponent } from './view/main3/admin-dashboard/admin-dashboard.component';
+import {AdminGuard} from "./guards/admin.guard";
+import {AdminService} from "./service/admin.service";
 
 
 @NgModule({
@@ -59,7 +63,9 @@ import { DashboardParentComponent } from './view/main2/dashboard-parent/dashboar
     DashboardComponent,
     MainComponent,
     Main2Component,
-    DashboardParentComponent
+    DashboardParentComponent,
+    Main3Component,
+    AdminDashboardComponent
   ],
 
   imports: [
@@ -73,7 +79,9 @@ import { DashboardParentComponent } from './view/main2/dashboard-parent/dashboar
     AuthGuard,
     AuthService,
     ParentGuard,
-    ParentService
+    ParentService,
+    AdminGuard,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })
