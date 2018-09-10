@@ -25,9 +25,14 @@ import { PsignupComponent } from './view/parent/psignup/psignup.component';
 import { TsigninComponent } from './view/teacher/tsignin/tsignin.component';
 import { TsignupComponent } from './view/teacher/tsignup/tsignup.component';
 import { AswitchComponent } from './view/home/aswitch/aswitch.component';
-import { DashboardComponent } from './view/dashboard/dashboard.component';
+import { DashboardComponent } from './view/main/dashboard/dashboard.component';
 import {BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
+import { MainComponent } from './view/main/main.component';
+import { Main2Component } from './view/main2/main2.component';
+import {ParentService} from "./service/parent.service";
+import {ParentGuard} from "./guards/parent.guard";
+import { DashboardParentComponent } from './view/main2/dashboard-parent/dashboard-parent.component';
 
 
 @NgModule({
@@ -51,7 +56,10 @@ import {MockBackend} from "@angular/http/testing";
     TsigninComponent,
     TsignupComponent,
     AswitchComponent,
-    DashboardComponent
+    DashboardComponent,
+    MainComponent,
+    Main2Component,
+    DashboardParentComponent
   ],
 
   imports: [
@@ -63,7 +71,9 @@ import {MockBackend} from "@angular/http/testing";
 
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    ParentGuard,
+    ParentService
   ],
   bootstrap: [AppComponent]
 })

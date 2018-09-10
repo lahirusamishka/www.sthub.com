@@ -5,9 +5,9 @@ import {AuthService} from "../service/auth.service";
 import {ParentService} from "../service/parent.service";
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class ParentGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router){
+  constructor(private authService: ParentService,private router:Router){
 
   }
 

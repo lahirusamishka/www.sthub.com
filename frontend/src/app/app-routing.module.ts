@@ -12,39 +12,59 @@ import {PsignupComponent} from "./view/parent/psignup/psignup.component";
 import {AsigninComponent} from "./view/admin/asignin/asignin.component";
 import {AsignupComponent} from "./view/admin/asignup/asignup.component";
 import {AswitchComponent} from "./view/home/aswitch/aswitch.component";
-import {DashboardComponent} from "./view/dashboard/dashboard.component";
+import {DashboardComponent} from "./view/main/dashboard/dashboard.component";
+import {AuthGuard} from "./guards/auth.guard";
+import {MainComponent} from "./view/main/main.component";
+import {Main2Component} from "./view/main2/main2.component";
+import {ParentGuard} from "./guards/parent.guard";
+import {DashboardParentComponent} from "./view/main2/dashboard-parent/dashboard-parent.component";
 
 
 const appRoutes: Routes = [
-  {path:'dashboard' ,component:DashboardComponent},
-
+  {
+    path: "main",
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {path: "dashboard", component: DashboardComponent}
+    ]
+  },
+  {
+    path:"main2",
+    component:Main2Component,
+    canActivate:[ParentGuard],
+    children:[
+      {path:"dashboard-parent", component: DashboardParentComponent}
+    ]
+  },
   {
     path: 'admin', component: AdminComponent, children: [
       {path: 'asignin', component: AsigninComponent},
       {path: 'asignup', component: AsignupComponent}
     ]
   },
-  {path: 'home', component: HomeComponent,children:[
+  {
+    path: 'home', component: HomeComponent,
 
-          {
-            path: 'teacher', component: TeacherComponent, children: [
-              {path: 'tsignin', component: TsigninComponent},
-              {path: 'tsignup', component: TsignupComponent}
-            ]
-          },
-          {
-            path: 'parent', component: ParentComponent, children: [
-              {path: 'psignin', component: PsigninComponent},
-              {path: 'psignup', component: PsignupComponent}
-            ]
-          }
+    children: [
+
+      {
+        path: 'teacher', component: TeacherComponent, children: [
+          {path: 'tsignin', component: TsigninComponent},
+          {path: 'tsignup', component: TsignupComponent}
+        ]
+      },
+      {
+        path: 'parent', component: ParentComponent, children: [
+          {path: 'psignin', component: PsigninComponent},
+          {path: 'psignup', component: PsignupComponent}
+        ]
+      }
 
 
-
-    ]},
+    ]
+  },
   {path: '', redirectTo: '/home', pathMatch: 'full'}
-
-
 ];
 
 
