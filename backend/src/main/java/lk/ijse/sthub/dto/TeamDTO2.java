@@ -6,17 +6,17 @@ public class TeamDTO2 {
     private String teamName;
     private String description;
     private String visible;
-    private Long teacherId;
+    private String teacherEmail;
 
     public TeamDTO2() {
     }
 
-    public TeamDTO2(Long teamId, String teamName, String description, String visible, Long teacherId) {
+    public TeamDTO2(Long teamId, String teamName, String description, String visible, String teacherEmail) {
         this.teamId = teamId;
         this.teamName = teamName;
         this.description = description;
         this.visible = visible;
-        this.teacherId = teacherId;
+        this.teacherEmail = teacherEmail;
     }
 
     public Long getTeamId() {
@@ -51,12 +51,12 @@ public class TeamDTO2 {
         this.visible = visible;
     }
 
-    public Long getTeacherId() {
-        return teacherId;
+    public String getTeacherEmail() {
+        return teacherEmail;
     }
 
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
+    public void setTeacherEmail(String teacherEmail) {
+        this.teacherEmail = teacherEmail;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class TeamDTO2 {
                 ", teamName='" + teamName + '\'' +
                 ", description='" + description + '\'' +
                 ", visible='" + visible + '\'' +
-                ", teacherId=" + teacherId +
+                ", teacherEmail='" + teacherEmail + '\'' +
                 '}';
     }
 }

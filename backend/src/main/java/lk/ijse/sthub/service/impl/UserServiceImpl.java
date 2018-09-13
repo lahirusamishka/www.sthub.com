@@ -29,6 +29,5 @@ public class UserServiceImpl implements UserService {
         User user= userRepository.findById(username).get();
 
         return user.getPassword().equals(password);
-
     }
 }

@@ -33,11 +33,9 @@ public class TeamServiceImpl implements TeamService {
 
         Teacher teacher= new Teacher();
 
-        teacher.setTid(teacherDTO.getTid());
+
         teacher.setName(teacherDTO.getName());
-        teacher.setAddress(teacherDTO.getAddress());
-        teacher.setContact(teacherDTO.getContact());
-        teacher.setEmail(teacherDTO.getEmail());
+
 
 
         Team team1= new Team();
@@ -68,7 +66,7 @@ public class TeamServiceImpl implements TeamService {
             teamDTO2.setDescription(team.getDescription());
             teamDTO2.setVisible(team.getVisible());
             Teacher teacher=team.getTeacher();
-            teamDTO2.setTeacherId(teacher.getTid());
+            teamDTO2.setTeacherEmail(teacher.getEmail());
 
             teamDTO2s.add(teamDTO2);
 

@@ -3,6 +3,7 @@ package lk.ijse.sthub.service.impl;
 
 
 import lk.ijse.sthub.dto.TeacherDTO;
+import lk.ijse.sthub.dto.UserDTO;
 import lk.ijse.sthub.entity.Teacher;
 import lk.ijse.sthub.repository.TeacherRepository;
 import lk.ijse.sthub.service.TeacherService;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -34,11 +36,13 @@ public class TeacherServiceImpl implements TeacherService {
 
         for (Teacher teacher : allTeachers) {
             TeacherDTO teacherDTO = new TeacherDTO(
-                    teacher.getTid(),
+
                     teacher.getName(),
                     teacher.getAddress(),
                     teacher.getContact(),
-                    teacher.getEmail());
+                    teacher.getEmail(),
+                    teacher.getScode()
+            );
 
             teacherDTOS.add(teacherDTO);
         }
@@ -48,22 +52,23 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public TeacherDTO getTeacher(Long teacherId) {
-        Teacher teacher = teacherRepository.findById(teacherId).get();
+    public TeacherDTO getTeacher(String teacherEmail) {
+        Teacher teacher = teacherRepository.findById(teacherEmail).get();
         return new TeacherDTO(
-                teacher.getTid(),
+
                 teacher.getName(),
                 teacher.getAddress(),
                 teacher.getContact(),
-                teacher.getEmail()
+                teacher.getEmail(),
+                teacher.getScode()
         );
 
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public boolean deleteTeacher(Long teacherId) {
-        teacherRepository.deleteById(teacherId);
+    public boolean deleteTeacher(String teacherEmail) {
+        teacherRepository.deleteById(teacherEmail);
         return true;
     }
 
@@ -74,12 +79,29 @@ public class TeacherServiceImpl implements TeacherService {
                 teacherDTO.getName(),
                 teacherDTO.getAddress(),
                 teacherDTO.getContact(),
-                teacherDTO.getEmail()
+                teacherDTO.getEmail(),
+                teacherDTO.getScode()
         );
 
         teacherRepository.save(student);
         return true;
     }
+
+    @Override
+    public boolean teacherValid(String username, String password) {
+
+        System.out.println(username+password);
+        boolean teach = teacherRepository.existsById(username);
+        if(!teach){
+            System.out.println(teach+"sssss");
+            return false;
+        }
+        System.out.println(teach+"ffff");
+        Teacher teacher = teacherRepository.findById(username).get();
+        return teacher.getScode().equals(password);
+    }
+
+
 
     @Override
     public long getTotalTeacher() {

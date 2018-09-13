@@ -1,30 +1,22 @@
 package lk.ijse.sthub.dto;
 
 public class TeacherDTO {
-    private Long tid;
 
     private String name;
+    private String email;
     private String address;
     private String contact;
-    private String email;
+    private String scode;
 
-    public TeacherDTO(){
+    public TeacherDTO() {
     }
 
-    public TeacherDTO(Long tid, String name, String address, String contact, String email) {
-        this.tid = tid;
+    public TeacherDTO(String name, String address, String contact, String email, String scode) {
         this.name = name;
         this.address = address;
         this.contact = contact;
         this.email = email;
-    }
-
-    public Long getTid() {
-        return tid;
-    }
-
-    public void setTid(Long tid) {
-        this.tid = tid;
+        this.scode = scode;
     }
 
     public String getName() {
@@ -59,14 +51,22 @@ public class TeacherDTO {
         this.email = email;
     }
 
+    public String getScode() {
+        return scode;
+    }
+
+    public void setScode(String scode) {
+        this.scode = scode;
+    }
+
     @Override
     public String toString() {
         return "TeacherDTO{" +
-                "tid=" + tid +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
                 ", email='" + email + '\'' +
+                ", scode='" + scode + '\'' +
                 '}';
     }
 }

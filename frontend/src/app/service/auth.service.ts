@@ -6,7 +6,8 @@ import {User} from "../dto/user";
 import {map} from "rxjs/operators";
 
 export const MAIN_URL= "http://localhost:8080";
-const URL = '/api/v1/login';
+const URL = '/api/v1/teachers';
+const URL2= '/api/v1/teachers/login'
 
 @Injectable()
 export class AuthService {
@@ -15,7 +16,7 @@ export class AuthService {
   }
 
   login(user: User): Observable<boolean> {
-    return this.http.post<boolean>(MAIN_URL + URL, user)
+    return this.http.post<boolean>(MAIN_URL + URL2, user)
       .pipe(
         map((result)=>{
           sessionStorage.setItem("token", result + "");
