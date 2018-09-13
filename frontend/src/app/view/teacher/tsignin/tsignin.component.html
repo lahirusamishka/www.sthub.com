@@ -3,19 +3,24 @@
 </div>
 
 <div class="col-sm">
+  <div *ngIf="failed" class="alert alert-danger">
+   {{validatermassage}}
+  </div>
+
+
+
   <form #frmLogin="ngForm" action="" method="post" >
 
 
-    <div *ngIf="inValidLogin" class="alert alert-danger">
-       Invalid User Name or Password
-    </div>
+
 
 
   <div class="form-group  ">
-    <input [(ngModel)]="user.username" name="txtUserName" id="inputusername " type="text"   class="form-control" placeholder="username">
+    <input [(ngModel)]="user.username" name="txtUserName" id="inputusername  " type="text"   class="form-control"  placeholder="username" >
   </div>
+
   <div class="form-group  ">
-    <input [(ngModel)]="user.password" name="txtpassword" id="inputpassword" type="password"  class="form-control"  placeholder="password">
+    <input [(ngModel)]="user.password" name="txtpassword" id="inputpassword" type="password"  class="form-control"  placeholder="password" >
   </div>
 
 

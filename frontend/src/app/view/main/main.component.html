@@ -1,0 +1,80 @@
+<header id="header">
+  <div class="container-fluid">
+
+    <div id="logo" class="pull-left">
+      <h1><a href="#intro">StHub</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+    </div>
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li class="menu-active"><a href="#intro">Class</a></li>
+        <li><a routerLink="abooutus" href="#about">Student</a></li>
+        <li><a href="#services">Massages</a></li>
+        <li><a routerLink="/main2/dashboard-parent" href="#portfolio"></a></li>
+
+
+        <li><a (click)="logout()" href=""><i class="fa fa-sign-out" style="font-size:30px" aria-hidden="true"></i></a>
+        </li>
+
+      </ul>
+    </nav><!-- #nav-menu-container -->
+  </div>
+
+</header>
+
+<br>
+<br>
+<br>
+<br>
+
+<!--body-->
+<div class="container-fluid">
+
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+
+
+      <div class="col-sm-2 sidenav">
+
+
+        <img class="card-img-top" src="../../../assets/img/profile/empty-profile-picture-circle-4.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{profileName}}</h5>
+          <p class="card-text">{{profileDiscription}}</p>
+          <a routerLink="/main/dashboard" routerLinkActive="active" class="btn btn-primary">Go Profile</a>
+        </div>
+
+
+        <ul class="list-group">
+          <li class="list-group-item">New <span class="badge">12</span></li>
+          <li class="list-group-item">Deleted <span class="badge">5</span></li>
+          <a href="">
+            <li class="list-group-item">Warnings <span class="badge">3</span></li>
+          </a>
+        </ul>
+
+
+      </div>
+      <div class="col-sm-8 text-left">
+        <h3>Edit Profile</h3>
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+

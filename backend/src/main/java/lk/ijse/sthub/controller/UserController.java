@@ -14,11 +14,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping(value="api/v1/login", consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean canAuthenticate(@RequestBody UserDTO user){
-        System.out.println(user);
-        userService.userValid(user.getUsername(), user.getPassword());
-        return true;
+    @PostMapping(value = "api/v1/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean canAuthenticate(@RequestBody UserDTO user) {
+        return userService.userValid(user.getUsername(), user.getPassword());
     }
 
 }

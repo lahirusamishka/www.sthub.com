@@ -5,9 +5,9 @@ import {AuthService} from "../service/auth.service";
 import {ParentService} from "../service/parent.service";
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class ParentGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router){
+  constructor(private authService: ParentService,private router:Router){
 
   }
 
@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (!AuthService.isAuthenticated()){
+    if (!ParentService.isAuthenticated()){
       this.router.navigate(['/home']);
       return false;
     }

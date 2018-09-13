@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean userValid(String username, String password) {
+
         boolean existUser= userRepository.existsById(username);
         if (!existUser){
             return false;

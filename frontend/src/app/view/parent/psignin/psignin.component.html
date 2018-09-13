@@ -3,14 +3,31 @@
 </div>
 
 <div class="col-sm">
+  <div *ngIf="failed" class="alert alert-danger">
+    error
+  </div>
 
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
-  </div>
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
-  </div>
-  <div class="form-group  ">
-    <button type="button" class="btn btn-outline-success">Success</button>
-  </div>
+
+
+  <form #frmLogin="ngForm" action="" method="post" >
+
+
+
+
+
+    <div class="form-group  ">
+      <input [(ngModel)]="parent.username" name="txtUserName" id="inputusername  " type="text"   class="form-control"  placeholder="username" >
+    </div>
+
+    <div class="form-group  ">
+      <input [(ngModel)]="parent.password" name="txtpassword" id="inputpassword" type="password"  class="form-control"  placeholder="password" >
+    </div>
+
+
+    <div class="form-group  ">
+
+      <button routerLink="/dashboard" routerLinkActive="active" type="button" (click)="login()" class="btn btn-outline-success col-md-12">Sign in</button>
+    </div>
+
+  </form>
 </div>

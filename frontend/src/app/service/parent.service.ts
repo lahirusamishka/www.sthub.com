@@ -2,26 +2,30 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
-import {User} from "../dto/user";
 import {map} from "rxjs/operators";
 
-export const MAIN_URL= "http://localhost:8080";
-const URL = '/api/v1/login';
 
+import {MAIN_URL} from "./auth.service";
+import {Parent} from "../dto/parent";
+
+const URL = '/api/v1/parentlogin';
 @Injectable()
-export class AuthService {
+export class ParentService {
+
+
 
   constructor(private http: HttpClient, private router: Router) {
+
   }
 
-  login(user: User): Observable<boolean> {
-    return this.http.post<boolean>(MAIN_URL + URL, user)
+  login(parent: Parent): Observable<boolean> {
+    return this.http.post<boolean>(MAIN_URL + URL, parent)
       .pipe(
         map((result)=>{
           sessionStorage.setItem("token", result + "");
           if (result){
 
-            this.router.navigate(['/main']);
+            this.router.navigate(['/main2']);
           }
 
           return result;
@@ -39,6 +43,5 @@ export class AuthService {
     sessionStorage.removeItem("token");
     this.router.navigate(['/home']);
   }
-
 
 }

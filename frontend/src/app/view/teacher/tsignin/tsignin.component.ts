@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../../dto/user";
 import {AuthService} from "../../../service/auth.service";
 
@@ -8,23 +8,34 @@ import {AuthService} from "../../../service/auth.service";
   styleUrls: ['./tsignin.component.css']
 })
 export class TsigninComponent implements OnInit {
-
-
   user: User = new User();
   failed: boolean;
+  validatermassage:string;
 
-  inValidLogin:boolean;
-
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit() {
   }
-  login(): void{
-    this.authService.login(this.user).subscribe(
-      (result)=>{
-        this.failed = !result;
-      }
-    );
+
+  login(): void {
+    if (!this.user.username==null && !this.user.password==null){
+  alert("null")
+
+    }else {
+      this.authService.login(this.user).subscribe(
+        (result) => {
+          this.failed = !result;
+          this.validatermassage=" Invalid User Name or Passwords"
+        }
+      );
+    }
+
+
+
+
+
+
   }
 
 }
