@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {User} from "../dto/user";
 import {map} from "rxjs/operators";
+import {Teacher} from "../dto/teacher";
 
 export const MAIN_URL= "http://localhost:8080";
 const URL = '/api/v1/teachers';
@@ -12,7 +13,12 @@ const URL2= '/api/v1/teachers/login'
 @Injectable()
 export class AuthService {
 
+
+  username:string;
+
+
   constructor(private http: HttpClient, private router: Router) {
+
   }
 
   login(user: User): Observable<boolean> {
@@ -24,11 +30,41 @@ export class AuthService {
 
             this.router.navigate(['/main']);
           }
-
           return result;
         })
       )
   }
+
+/*
+  getAllCustomers(): Observable<Array<Customer>>{
+    return this.http.get<Array<Customer>>(MAIN_URL + URL);
+  }*/
+
+/*
+  deleteCustomer(id: string): Observable<boolean>{
+    return this.http.delete<boolean>(MAIN_URL+ URL + "/" + id);
+  }
+*/
+
+  saveTeacher(teacher: Teacher): Observable<boolean>{
+    return this.http.post<boolean>(MAIN_URL + URL,teacher);
+  }
+
+/*
+  getTotalCustomers(): Observable<number>{
+    return this.http.get<number>(MAIN_URL + URL + "/count");
+  }
+*/
+
+  searchTeacher(username :String): Observable<Teacher>{
+    return this.http.get<Teacher>(MAIN_URL + URL + "/"+username);
+  }
+
+
+
+
+
+
 
   static isAuthenticated(): boolean{
     if (sessionStorage.getItem("token")){
@@ -38,7 +74,7 @@ export class AuthService {
 
   logout(): void{
     sessionStorage.removeItem("token");
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/teacher/tsignin']);
   }
 
 

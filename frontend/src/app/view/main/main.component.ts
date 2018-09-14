@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
+import {Teacher} from "../../dto/teacher";
+import {map} from "rxjs/operators";
+
+export const profiles = "";
 
 @Component({
   selector: 'app-main',
@@ -7,20 +11,30 @@ import {AuthService} from "../../service/auth.service";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  profiledetails: string;
+
+  teacher: Teacher = new Teacher();
 
 
-  profileName:string="No teacher";
-  profileDiscription:string="empty discription"
-
-
-  constructor(private authservice:AuthService) { }
+  constructor(private authservice: AuthService) {
+  }
 
   ngOnInit() {
+
+    this.authservice.searchTeacher(sessionStorage.getItem("scode")).subscribe(
+      ((result)=>{
+        this.teacher=result;
+      })
+    )
+    
+
   }
 
 
-  logout(){
+
+  logout() {
     this.authservice.logout();
   }
+
 
 }

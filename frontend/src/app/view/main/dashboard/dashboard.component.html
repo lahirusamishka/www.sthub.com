@@ -1,44 +1,100 @@
-<!--<div class="form-group">-->
-  <!--<fieldset disabled="">-->
-    <!--<label class="control-label" for="disabledInput">Disabled input</label>-->
-    <!--<input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">-->
-  <!--</fieldset>-->
-<!--</div>-->
+<div class="card-body shadow-sm l-g">
 
-<!--<div class="form-group">-->
-  <!--<fieldset>-->
-    <!--<label class="control-label" for="readOnlyInput">Readonly input</label>-->
-    <!--<input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly="">-->
-  <!--</fieldset>-->
-<!--</div>-->
+  <h3 class="font-weight-bold">Create New Team</h3>
 
-<div class="form-group has-success" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-  <label class="form-control-label"><strong>Your name</strong></label>
-  <input type="text"  class="form-control is-valid" id="name" placeholder="enter name">
-  <!--<div class="valid-feedback">Success! You've done it.</div>-->
+  <form #TeamForm="ngForm"   (submit)="saveTeam()">
+    <div class="form-row">
+
+      <div class="col-md-3 mb-3">
+        <label for="validationServerUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+          </div>
+
+          <input [disabled]="true" type="text" name="teacherName" [(ngModel)]="teacher.name" class="form-control " id="validationServerUsername"
+                 placeholder="{{teacher.name}}" aria-describedby="inputGroupPrepend3" required>
+
+
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <div class="col-md-5 mb-3">
+        <label >Subject</label>
+
+        <input type="text" class="form-control"name="subject" id="subject name" [(ngModel)]="selectedTeam.subject"  placeholder="Subject Name" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+
+      <div class="col-md-5 mb-3">
+        <label >Discription</label>
+        <input type="text" class="form-control " name="discription" [(ngModel)]="selectedTeam.discription" id="discriptin" placeholder="Discription" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="form-group">
+
+
+      <div class="form-check">
+        <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value="" id="invalidCheck3" required>
+        <label class="form-check-label" for="invalidCheck3">
+          group are private
+        </label>
+
+      </div>
+
+
+    </div>
+    <button type="submit" class="btn btn-success ">Save</button>
+    <br>
+    <br>
+    <p class="font-awesome">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae est facere fugit in itaque maiores maxime nemo nostrum officiis perspiciatis, placeat possimus quas qui quis quisquam voluptates. Repellendus!</p>
+  </form>
+
+  <br>
+  <h3 class="font-weight-bold">All Team</h3>
+  <div class="col-md-9 col-12">
+    <table id="tblCustomers" class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th> ID</th>
+        <th> Subject</th>
+        <th> Discription</th>
+        <th> Visibility</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let team of teams | paginate: { itemsPerPage: 7, currentPage: p }"
+          (click)="selectTeam(team)" [class.selected]="team==selectedTeam">
+        <td>{{team.teamid}}</td>
+        <td>{{team.subject}}</td>
+        <td>{{team.discription}}</td>
+        <td>{{team.visibles}}</td>
+        <td>
+          <i (click)="deleteTeam(team)" class="fa fa-trash fa-2x"></i>
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
 </div>
-
-<div class="form-group has-success">
-  <label class="form-control-label"><strong>Your address</strong></label>
-  <input type="text"  class="form-control is-valid" id="address" placeholder="enter address">
-  <!--<div class="valid-feedback">Success! You've done it.</div>-->
-</div>
-
-<div class="form-group has-success">
-  <label class="form-control-label"><strong>Your contact</strong></label>
-  <input type="text"  class="form-control is-valid" id="contactnumber"placeholder="enter contact">
-  <!--<div class="valid-feedback">Success! You've done it.</div>-->
-</div>
-
-<div class="form-group has-success">
-  <label class="form-control-label"><strong>Your email</strong></label>
-  <input type="text" class="form-control is-valid" id="email" placeholder="enter email">
-  <!--<div class="valid-feedback">Success! You've done it.</div>-->
-</div>
-
-
-<button type="button" class="btn btn-success">Save</button> &nbsp;
-
-<button type="button" class="btn btn-danger">Delete</button> &nbsp;
-
-

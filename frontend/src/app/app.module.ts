@@ -22,6 +22,7 @@ import { AsigninComponent } from './view/admin/asignin/asignin.component';
 import { AsignupComponent } from './view/admin/asignup/asignup.component';
 import { PsigninComponent } from './view/parent/psignin/psignin.component';
 import { PsignupComponent } from './view/parent/psignup/psignup.component';
+import {NgxPaginationModule} from "ngx-pagination";
 import { TsigninComponent } from './view/teacher/tsignin/tsignin.component';
 import { TsignupComponent } from './view/teacher/tsignup/tsignup.component';
 import { AswitchComponent } from './view/home/aswitch/aswitch.component';
@@ -37,6 +38,9 @@ import { Main3Component } from './view/main3/main3.component';
 import { AdminDashboardComponent } from './view/main3/admin-dashboard/admin-dashboard.component';
 import {AdminGuard} from "./guards/admin.guard";
 import {AdminService} from "./service/admin.service";
+import { SettingsComponent } from './view/main/settings/settings.component';
+import { StudentManageComponent } from './view/main/student-manage/student-manage.component';
+import {TeamService} from "./service/team.service";
 
 
 @NgModule({
@@ -65,14 +69,18 @@ import {AdminService} from "./service/admin.service";
     Main2Component,
     DashboardParentComponent,
     Main3Component,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    SettingsComponent,
+    StudentManageComponent
   ],
 
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
+
   ],
 
   providers: [
@@ -81,7 +89,8 @@ import {AdminService} from "./service/admin.service";
     ParentGuard,
     ParentService,
     AdminGuard,
-    AdminService
+    AdminService,
+    TeamService
   ],
   bootstrap: [AppComponent]
 })

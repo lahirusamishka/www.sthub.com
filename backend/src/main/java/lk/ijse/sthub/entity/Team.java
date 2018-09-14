@@ -7,12 +7,10 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tId")
-    private Long id;
-
-    private String teamName;
-    private String description;
-    private String visible;
-
+    private Long teamid;
+    private String subject;
+    private String discription;
+    private boolean visibles;
     @ManyToOne
     private Teacher teacher;
 
@@ -20,43 +18,43 @@ public class Team {
     public Team() {
     }
 
-    public Team(String teamName, String description, String visible, Teacher teacher) {
-        this.teamName = teamName;
-        this.description = description;
-        this.visible = visible;
+    public Team(String subject, String discription, boolean visibles, Teacher teacher) {
+        this.subject = subject;
+        this.discription = discription;
+        this.visibles = visibles;
         this.teacher = teacher;
     }
 
-    public Long getId() {
-        return id;
+    public Long getTeamid() {
+        return teamid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTeamid(Long teamid) {
+        this.teamid = teamid;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDiscription() {
+        return discription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
-    public String getVisible() {
-        return visible;
+    public boolean isVisibles() {
+        return visibles;
     }
 
-    public void setVisible(String visible) {
-        this.visible = visible;
+    public void setVisibles(boolean visibles) {
+        this.visibles = visibles;
     }
 
     public Teacher getTeacher() {
@@ -70,10 +68,10 @@ public class Team {
     @Override
     public String toString() {
         return "Team{" +
-                "id=" + id +
-                ", teamName='" + teamName + '\'' +
-                ", description='" + description + '\'' +
-                ", visible='" + visible + '\'' +
+                "teamid=" + teamid +
+                ", subject='" + subject + '\'' +
+                ", discription='" + discription + '\'' +
+                ", visibles=" + visibles +
                 ", teacher=" + teacher +
                 '}';
     }

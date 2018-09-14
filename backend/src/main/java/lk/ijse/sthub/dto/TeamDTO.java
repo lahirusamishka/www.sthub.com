@@ -2,72 +2,73 @@ package lk.ijse.sthub.dto;
 
 public class TeamDTO {
 
-    private Long id;
-    private String teamName;
-    private String description;
-    private String visible;
-    private TeacherDTO teacherDTO;
+    private Long teamid;
+    private String subject;
+    private String discription;
+    private boolean visibles;
+    private String teacherUserName;
 
 
     public TeamDTO() {
+
     }
 
-    public TeamDTO(Long id, String teamName, String description, String visible, TeacherDTO teacherDTO) {
-        this.id = id;
-        this.teamName = teamName;
-        this.description = description;
-        this.visible = visible;
-        this.teacherDTO = teacherDTO;
+    public TeamDTO(Long teamid, String subject, String discription, boolean visibles, String teacherUserName) {
+        this.teamid = teamid;
+        this.subject = subject;
+        this.discription = discription;
+        this.visibles = visibles;
+        this.teacherUserName = teacherUserName;
     }
 
-    public Long getId() {
-        return id;
+    public Long getTeamid() {
+        return teamid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTeamid(Long teamid) {
+        this.teamid = teamid;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDiscription() {
+        return discription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
-    public String getVisible() {
-        return visible;
+    public boolean isVisibles() {
+        return visibles;
     }
 
-    public void setVisible(String visible) {
-        this.visible = visible;
+    public void setVisibles(boolean visibles) {
+        this.visibles = visibles;
     }
 
-    public TeacherDTO getTeacherDTO() {
-        return teacherDTO;
+    public String getTeacherUserName() {
+        return teacherUserName;
     }
 
-    public void setTeacherDTO(TeacherDTO teacherDTO) {
-        this.teacherDTO = teacherDTO;
+    public void setTeacherUserName(String teacherUserName) {
+        this.teacherUserName = teacherUserName;
     }
 
     @Override
     public String toString() {
         return "TeamDTO{" +
-                "id=" + id +
-                ", teamName='" + teamName + '\'' +
-                ", description='" + description + '\'' +
-                ", visible='" + visible + '\'' +
-                ", teacherDTO=" + teacherDTO +
+                "teamid=" + teamid +
+                ", subject='" + subject + '\'' +
+                ", discription='" + discription + '\'' +
+                ", visibles=" + visibles +
+                ", teacherUserName='" + teacherUserName + '\'' +
                 '}';
     }
 }

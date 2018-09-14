@@ -21,6 +21,8 @@ import {DashboardParentComponent} from "./view/main2/dashboard-parent/dashboard-
 import {AdminGuard} from "./guards/admin.guard";
 import {AdminDashboardComponent} from "./view/main3/admin-dashboard/admin-dashboard.component";
 import {Main3Component} from "./view/main3/main3.component";
+import {SettingsComponent} from "./view/main/settings/settings.component";
+import {StudentManageComponent} from "./view/main/student-manage/student-manage.component";
 
 
 const appRoutes: Routes = [
@@ -29,7 +31,9 @@ const appRoutes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: "dashboard", component: DashboardComponent}
+      {path: "dashboard", component: DashboardComponent},
+      {path: "settings" ,component: SettingsComponent},
+      {path: "student-manage",component:StudentManageComponent}
     ]
   },
   {

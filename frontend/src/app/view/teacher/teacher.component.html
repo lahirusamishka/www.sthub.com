@@ -2,20 +2,43 @@
   <div class="col-sm">
 
 
-    <button routerLink="tsignin" routerLinkActive="active"  type="button" class="btn btn-success text-center">SignIn</button>
-    &nbsp;
-    <button routerLink="tsignup" routerLinkActive="active"  type="button" class="btn btn-success text-center">SignUp</button>
-    &nbsp;
-    <button routerLink="/home" routerLinkActive="active"  type="button" class="btn btn-danger text-center">Cansel</button>
+
   </div>
 
   <div class="container">
+
     <div class="row">
-      <div class="col-sm">
+
+
+
+      <div class="col-sm-3">
+
+
+
 
       </div>
 
-      <router-outlet></router-outlet>
+     <div class="card-body shadow-lg dark">
+
+
+       <div class="btn-group float-right mt-2" role="group">
+         <a class="btn btn-outline-success btn-md btn-success"  routerLink="tsignin" routerLinkActive="active"   href="#">
+           <i class="fa fa-sign-in" aria-hidden="true"></i> Log in</a>
+
+         <a class="btn btn-outline-info btn-md"  routerLink="tsignup" routerLinkActive="active"  href="#">
+           <i class="fa fa-plus" aria-hidden="true"></i> Create New Account</a>
+
+         <a class="btn btn-outline-danger btn-md"  routerLink="/home"  href="#">
+           <i class="fa fa-close" aria-hidden="true"></i> Close</a>
+
+       </div>
+
+
+
+
+       <router-outlet></router-outlet>
+     </div>
+
 
 
       <div class="col-sm">

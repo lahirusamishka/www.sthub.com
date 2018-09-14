@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,14 +20,32 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean saveTeam(@RequestBody TeamDTO teamDTO){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean saveTeam(@RequestBody TeamDTO teamDTO) {
         return teamService.saveTeam(teamDTO);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<TeamDTO2>  getAllTeams(){
-       return teamService.getAllTeams();
+    @GetMapping(value = "/all/{username}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<TeamDTO> getAllTeams(@PathVariable("username")String username) {
+
+        return teamService.getAllTeams(username);
+
     }
+
+    @GetMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public TeamDTO getTeam(@PathVariable("id")long teamId){
+        return teamService.getTeam(teamId);
+    }
+
+    @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public  boolean deleteTeacher(@PathVariable("id")long teamId){
+        return teamService.deleteTeam(teamId);
+    }
+
+    @GetMapping(value = "/count",produces = MediaType.APPLICATION_JSON_VALUE)
+    public long getTotalTeam(){
+        return teamService.getTotalTeams();
+    }
+
 
 }
