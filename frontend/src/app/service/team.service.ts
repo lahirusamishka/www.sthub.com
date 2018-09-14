@@ -17,10 +17,11 @@ export class TeamService {
   }
 
   deleteTeam(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(MAIN_URL + URL + "/" + id);
+       return this.http.delete<boolean>(MAIN_URL + URL + "/" + id);
   }
 
   saveTeam(team: Team): Observable<boolean> {
+
     return this.http.post<boolean>(MAIN_URL + URL, team);
   }
 
@@ -28,7 +29,8 @@ export class TeamService {
     return this.http.get<number>(MAIN_URL + URL + "/count");
   }
 
-  searchTeam(id: String): Observable<Team> {
+  searchTeam(id: number): Observable<Team> {
     return this.http.get<Team>(MAIN_URL + URL + "/" + id);
   }
+
 }

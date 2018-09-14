@@ -11,6 +11,8 @@ import {TeamService} from "../../../service/team.service";
 })
 export class DashboardComponent implements OnInit {
 
+  seaechNumber: number;
+
   teacher: Teacher = new Teacher();
   selectedTeam: Team = new Team();
   tempTeam: Team = null;
@@ -25,25 +27,39 @@ export class DashboardComponent implements OnInit {
     this.authService.searchTeacher(sessionStorage.getItem("scode")).subscribe(
       ((result) => {
         this.teacher = result;
+        this.selectedTeam.teacherUserName = result.name;
       })
     )
     this.loadAllTeams(sessionStorage.getItem("scode"));
   }
 
-  saveTeam():void{
-    this.teamService.saveTeam(this.selectedTeam).subscribe(
+
+  searchTeam() {
+
+    this.teamService.searchTeam(this.seaechNumber).subscribe(
       (result)=>{
-        if (result){
+
+        this.selectedTeam=result;
+      }
+    )
+
+  }
+
+  saveTeam(): void {
+
+    this.teamService.saveTeam(this.selectedTeam).subscribe(
+      (result) => {
+        if (result) {
           alert("saved successfully");
           this.loadAllTeams(sessionStorage.getItem("scode"));
-        }else{
+        } else {
           alert("Failed to save");
         }
       }
     )
   }
 
-  loadAllTeams(username:string): void {
+  loadAllTeams(username: string): void {
     this.teamService.getAllTeam(username).subscribe(
       (result) => {
         this.teams = result;

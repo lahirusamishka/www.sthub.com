@@ -22,6 +22,7 @@ public class TeamController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveTeam(@RequestBody TeamDTO teamDTO) {
+
         return teamService.saveTeam(teamDTO);
     }
 
@@ -31,6 +32,15 @@ public class TeamController {
         return teamService.getAllTeams(username);
 
     }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<TeamDTO> getAllTeams() {
+
+        return teamService.getAll();
+
+    }
+
+
 
     @GetMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public TeamDTO getTeam(@PathVariable("id")long teamId){

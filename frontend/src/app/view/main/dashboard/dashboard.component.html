@@ -1,46 +1,57 @@
 <div class="card-body shadow-sm l-g">
 
+
+  <form class="form-inline float-right mt-3 ">
+
+    <input class="form-control mr-sm-2 " [(ngModel)]="seaechNumber" name="textNumber" type="search" placeholder="Search" aria-label="Search">
+
+
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchTeam()" type="submit">Search</button>
+
+
+
+  </form>
+
   <h3 class="font-weight-bold">Create New Team</h3>
 
-  <form #TeamForm="ngForm"   (submit)="saveTeam()">
+  <form #TeamForm="ngForm" (submit)="saveTeam()">
     <div class="form-row">
-
       <div class="col-md-3 mb-3">
-        <label for="validationServerUsername">Username</label>
+        <label>Username</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroupPrepend3">@</span>
           </div>
 
-          <input [disabled]="true" type="text" name="teacherName" [(ngModel)]="teacher.name" class="form-control " id="validationServerUsername"
+          <input [disabled]="true" type="text" name="teacherName" [(ngModel)]="teacher.name" class="form-control "
+                 id="validationServerUsername "
                  placeholder="{{teacher.name}}" aria-describedby="inputGroupPrepend3" required>
-
-
           <div class="invalid-feedback">
             Please choose a username.
           </div>
         </div>
       </div>
     </div>
+
     <div class="form">
       <div class="col-md-5 mb-3">
-        <label >Subject</label>
+        <label>Subject</label>
 
-        <input type="text" class="form-control"name="subject" id="subject name" [(ngModel)]="selectedTeam.subject"  placeholder="Subject Name" required>
+        <input type="text" class="form-control" name="subject" id="subject name" [(ngModel)]="selectedTeam.subject"
+               placeholder="Subject Name" required>
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
       </div>
 
       <div class="col-md-5 mb-3">
-        <label >Discription</label>
-        <input type="text" class="form-control " name="discription" [(ngModel)]="selectedTeam.discription" id="discriptin" placeholder="Discription" required>
+        <label>Discription</label>
+        <input type="text" class="form-control " name="discription" [(ngModel)]="selectedTeam.discription"
+               id="discriptin" placeholder="Discription" required>
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
       </div>
-
-
 
 
     </div>
@@ -48,7 +59,8 @@
 
 
       <div class="form-check">
-        <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value="" id="invalidCheck3" required>
+        <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value=""
+               id="invalidCheck3" required>
         <label class="form-check-label" for="invalidCheck3">
           group are private
         </label>
@@ -60,7 +72,9 @@
     <button type="submit" class="btn btn-success ">Save</button>
     <br>
     <br>
-    <p class="font-awesome">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae est facere fugit in itaque maiores maxime nemo nostrum officiis perspiciatis, placeat possimus quas qui quis quisquam voluptates. Repellendus!</p>
+    <p class="font-awesome">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae est facere
+      fugit in itaque maiores maxime nemo nostrum officiis perspiciatis, placeat possimus quas qui quis quisquam
+      voluptates. Repellendus!</p>
   </form>
 
   <br>
@@ -84,7 +98,7 @@
         <td>{{team.discription}}</td>
         <td>{{team.visibles}}</td>
         <td>
-          <i (click)="deleteTeam(team)" class="fa fa-trash fa-2x"></i>
+          <i (click)="deleteTeam(team)" class="fa fa-trash fa-1x"></i>
         </td>
       </tr>
       </tbody>

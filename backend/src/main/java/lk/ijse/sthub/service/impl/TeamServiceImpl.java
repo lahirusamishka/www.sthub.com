@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -42,9 +43,6 @@ public class TeamServiceImpl implements TeamService {
             if (username.equals(team.getTeacher().getName())) {
 
                 TeamDTO teamDTO = new TeamDTO(team.getTeamid(), team.getSubject(), team.getDiscription(), team.isVisibles(), team.getTeacher().getName());
-
-                System.out.println(teamDTO);
-
                 teamDTOS.add(teamDTO);
             }
         }
@@ -109,34 +107,80 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public ArrayList<TeamDTO> getAll() {
+        ArrayList<Team> teamArrayListNormal = teamRepository.getallTems();
+
+        ArrayList<TeamDTO> teamDTOS= new ArrayList<>();
+
+        for (Team team: teamArrayListNormal) {
+            TeamDTO teamDTO= new TeamDTO();
+
+            teamDTO.setTeamid(team.getTeamid());
+            teamDTO.setSubject(team.getSubject());
+            teamDTO.setDiscription(team.getDiscription());
+            teamDTO.setVisibles(team.isVisibles());
+            teamDTO.setTeacherUserName(team.getTeacher().getName());
+
+            teamDTOS.add(teamDTO);
+        }
+
+        return teamDTOS;
+    }
+
+    @Override
     public TeamDTO getTeam(long teamId) {
-        return null;
+        Team team = teamRepository.findById(teamId).get();
+
+        return new TeamDTO(team.getTeamid(),team.getSubject(),team.getDiscription(),team.isVisibles(),team.getTeacher().getName());
+
     }
 
     @Override
     public boolean deleteTeam(long teamId) {
-        return false;
+        teamRepository.deleteById(teamId);
+        return true;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public boolean saveTeam(TeamDTO teamDTO) {
 
+      if (saveTeams(teamDTO)){
+          return true;
+      }else {
+          String teacherUserName = teamDTO.getTeacherUserName();
+          Teacher teacher1 = teacherRepository.findById(teacherUserName).get();
+
+          Team team1 = new Team();
+
+          team1.setSubject(teamDTO.getSubject());
+          team1.setDiscription(teamDTO.getDiscription());
+          team1.setVisibles(teamDTO.isVisibles());
+          team1.setTeacher(teacher1);
+
+          teamRepository.save(team1);
+          return true;
+      }
+
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public boolean saveTeams(TeamDTO teamDTO) {
 
         String teacherUserName = teamDTO.getTeacherUserName();
         Teacher teacher1 = teacherRepository.findById(teacherUserName).get();
 
+        Team team=new Team();
+        team.setTeamid(teamDTO.getTeamid());
+        team.setSubject(teamDTO.getSubject());
+        team.setDiscription(teamDTO.getDiscription());
+        team.setVisibles(teamDTO.isVisibles());
+        team.setTeacher(teacher1);
 
-        Team team1 = new Team();
-
-        team1.setSubject(teamDTO.getSubject());
-        team1.setDiscription(teamDTO.getDiscription());
-        team1.setVisibles(teamDTO.isVisibles());
-        team1.setTeacher(teacher1);
-
-        teamRepository.save(team1);
+        teamRepository.save(team);
         return true;
     }
+
 
     @Override
     public long getTotalTeams() {

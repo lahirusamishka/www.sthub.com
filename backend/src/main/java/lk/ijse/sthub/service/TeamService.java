@@ -11,7 +11,12 @@ public interface TeamService {
 
     public ArrayList<TeamDTO> getAllTeams(String username);
 
+
+    public ArrayList<TeamDTO> getAll();
+
     public TeamDTO getTeam(long teamId);
+
+
 
     public boolean deleteTeam(long teamId);
 
