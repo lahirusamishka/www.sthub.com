@@ -1,29 +1,30 @@
-<div class="card-body shadow-sm l-g">
+<div class=" card-body shadow p-3 mb-5 bg-light rounded ">
 
+  <div class="card-body ">
 
   <form class="form-inline float-right mt-3 ">
 
-    <input class="form-control mr-sm-2 " [(ngModel)]="seaechNumber" name="textNumber" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control form-control-sm " [(ngModel)]="seaechNumber" name="textNumber" type="search" placeholder="Search" aria-label="Search">
 
 
-    <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchTeam()" type="submit">Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0 form-control-sm fa fa-search" (click)="searchTeam()" type="submit"></button>
 
 
 
   </form>
-
-  <h3 class="font-weight-bold">Create New Team</h3>
+    <span class="badge badge-info">Info</span>
+  <h4 class="font-weight-bold">Create New Team</h4>
 
   <form #TeamForm="ngForm" (submit)="saveTeam()">
     <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-3 mb-3 ">
         <label>Username</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+            <span class="input-group-text form-control-sm" id="inputGroupPrepend3">@</span>
           </div>
 
-          <input [disabled]="true" type="text" name="teacherName" [(ngModel)]="teacher.name" class="form-control "
+          <input [disabled]="true" type="text" name="teacherName" [(ngModel)]="teacher.name" class="form-control form-control-sm "
                  id="validationServerUsername "
                  placeholder="{{teacher.name}}" aria-describedby="inputGroupPrepend3" required>
           <div class="invalid-feedback">
@@ -37,7 +38,7 @@
       <div class="col-md-5 mb-3">
         <label>Subject</label>
 
-        <input type="text" class="form-control" name="subject" id="subject name" [(ngModel)]="selectedTeam.subject"
+        <input type="text" class="form-control form-control-sm" name="subject" id="subject name" [(ngModel)]="selectedTeam.subject"
                placeholder="Subject Name" required>
         <div class="invalid-feedback">
           Please provide a valid city.
@@ -46,7 +47,7 @@
 
       <div class="col-md-5 mb-3">
         <label>Discription</label>
-        <input type="text" class="form-control " name="discription" [(ngModel)]="selectedTeam.discription"
+        <input type="text" class="form-control form-control-sm " name="discription" [(ngModel)]="selectedTeam.discription"
                id="discriptin" placeholder="Discription" required>
         <div class="invalid-feedback">
           Please provide a valid city.
@@ -62,7 +63,7 @@
         <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value=""
                id="invalidCheck3" required>
         <label class="form-check-label" for="invalidCheck3">
-          group are private
+          private group
         </label>
 
       </div>
@@ -93,6 +94,7 @@
       <tbody>
       <tr *ngFor="let team of teams | paginate: { itemsPerPage: 7, currentPage: p }"
           (click)="selectTeam(team)" [class.selected]="team==selectedTeam">
+
         <td>{{team.teamid}}</td>
         <td>{{team.subject}}</td>
         <td>{{team.discription}}</td>
@@ -111,4 +113,5 @@
       </tfoot>
     </table>
   </div>
+</div>
 </div>

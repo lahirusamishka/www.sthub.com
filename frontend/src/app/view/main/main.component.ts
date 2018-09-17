@@ -4,6 +4,7 @@ import {Teacher} from "../../dto/teacher";
 import {map} from "rxjs/operators";
 import {TeamService} from "../../service/team.service";
 import {Team} from "../../dto/team";
+import {isNumber} from "util";
 
 export const profiles = "";
 
@@ -17,15 +18,16 @@ export class MainComponent implements OnInit {
   teams: Array<Team> = [];
   teacher: Teacher = new Teacher();
 
+  selectedTeam: Team = new Team();
 
-  constructor(private authservice: AuthService,private teamService:TeamService) {
+  constructor(private authservice: AuthService, private teamService: TeamService) {
   }
 
   ngOnInit() {
 
     this.authservice.searchTeacher(sessionStorage.getItem("scode")).subscribe(
-      ((result)=>{
-        this.teacher=result;
+      ((result) => {
+        this.teacher = result;
       })
     )
     this.loadAllTeams(sessionStorage.getItem("scode"));
@@ -38,6 +40,15 @@ export class MainComponent implements OnInit {
         this.teams = result;
       }
     )
+  }
+
+  selectTeam(tems: Team) {
+
+    this.selectedTeam.teamid=tems.teamid;
+
+
+    sessionStorage.setItem("scodes","d");
+
   }
 
   logout() {

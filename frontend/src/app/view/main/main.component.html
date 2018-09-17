@@ -1,35 +1,32 @@
+<header id="header">
+  <div class="container-fluid shadow-lg">
 
-  <header id="header">
-    <div class="container-fluid shadow-lg">
-
-      <div id="logo" class="pull-left">
-        <h1><a href="#intro">StHub</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
-      </div>
-
-      <nav id="nav-menu-container">
-
-
-        <ul class="nav-menu">
-
-
-          <li><a routerLink="/main/dashboard" routerLinkActive="active" href="#about">Team</a></li>
-          <li><a routerLink="/main/student-manage" routerLinkActive="active" href="#about">Student</a></li>
-          <li><a routerLink="/main/settings" routerLinkActive="active" href="#services">Settings</a></li>
-
-
-          <li><a (click)="logout()" href="/home/teacher/tsignin" ><i class="fa fa-sign-out" style="font-size:30px" aria-hidden="true"></i></a>
-          </li>
-
-        </ul>
-      </nav>
+    <div id="logo" class="pull-left">
+      <h1><a href="#intro">StHub</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
     </div>
 
-  </header>
+    <nav id="nav-menu-container">
 
 
+      <ul class="nav-menu">
 
+
+        <li><a routerLink="/main/dashboard" routerLinkActive="active" href="#about">Team</a></li>
+        <li><a routerLink="/main/student-manage" routerLinkActive="active" href="#about">Student</a></li>
+        <li><a routerLink="/main/settings" routerLinkActive="active" href="#services">Settings</a></li>
+
+
+        <li><a (click)="logout()" href="/home/teacher/tsignin"><i class="fa fa-sign-out" style="font-size:30px"
+                                                                  aria-hidden="true"></i></a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+</header>
 
 
 <br>
@@ -38,32 +35,36 @@
 <br>
 
 <!--body-->
-<div class="container-fluid ">
+<div class="container-fluid  ">
 
 
   <div class="container-fluid text-center">
     <div class="row content">
 
 
-      <div class="col-sm-2 sidenav ">
+      <div class="col-sm-2 sidenav">
 
-
-        <img class="card-img-top shadow-sm l-g" src="../../../assets/img/profile/empty-profile-picture-circle-4.jpg"
-             alt="Card image cap">
+        <img src="../../../assets/img/profile/empty-profile-picture-circle-4.jpg" alt="..." class="img-thumbnail">
 
 
         <div class="card-body">
-          <h5 class="card-title">{{teacher.name}}</h5>
-          <p class="card-text">{{teacher.address}}</p>
+
+          <h5 class="card-title font-weight-bold">{{teacher.name}}</h5>
+          <p class="card-text">{{teacher.email}}</p>
           <!--<a  class="btn btn-primary">Go Profile</a>-->
         </div>
 
+
         <ul class="list-group" *ngFor="let team of teams">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-           {{team.subject}}
-            <span class="badge badge-primary badge-pill">14</span>
-          </li>
+          <a (click)="selectTeam(team)">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              {{team.subject}}
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+
+          </a>
         </ul>
+
 
       </div>
       <div class="col-sm-8 text-left">
@@ -72,18 +73,18 @@
       </div>
 
 
-
       <div class="col-sm-2 sidenav">
         <div class="well">
-          <div class="card bg-light mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
+          <!-- <div class="card bg-light mb-3" style="max-width: 18rem;">
+             <div class="card-header">Header</div>
+             <div class="card-body">
+               <h5 class="card-title">Light card title</h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                 content.</p>
+             </div>-->
         </div>
         <div class="well">
-        <!--  <p>ADS</p>-->
+          <!--  <p>ADS</p>-->
         </div>
       </div>
     </div>
@@ -92,4 +93,4 @@
 
 </div>
 
-</div>
+

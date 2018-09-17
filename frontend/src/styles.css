@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 180px;
 }
 
-/* Nav Menu Arrows */
+/*!* Nav Menu Arrows *!
 .sf-arrows .sf-with-ul {
   padding-right: 30px;
 }
@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sf-arrows ul .sf-with-ul:after {
   content: "\f105";
-}
+}*/
 
 /* Nav Meu Container */
 #nav-menu-container {
