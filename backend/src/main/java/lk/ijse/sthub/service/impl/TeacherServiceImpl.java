@@ -90,13 +90,13 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public boolean teacherValid(String username, String password) {
 
-        System.out.println(username+password);
+
         boolean teach = teacherRepository.existsById(username);
         if(!teach){
-            System.out.println(teach+"sssss");
+
             return false;
         }
-        System.out.println(teach+"ffff");
+
         Teacher teacher = teacherRepository.findById(username).get();
         return teacher.getScode().equals(password);
     }

@@ -1,4 +1,4 @@
-<div class="section-header">
+<div class="section-header" xmlns="http://www.w3.org/1999/html">
 
   <br>
   <br>
@@ -15,10 +15,27 @@
 
   <form #frmLogin="ngForm" action="" method="post" >
 
+    <div class="form-group  ">
 
+      <input type="text" required #name="ngModel" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$"
+             [class.is-invalid]="name.invalid && name.touched" class="form-control "
+             name="user" [(ngModel)]="user.username" placeholder="enter user name">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid username</small>
 
+    </div>
 
+    <div class="form-group  ">
 
+      <input type="password" required #confirmpasscode="ngModel"
+             pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+             [class.is-invalid]="confirmpasscode.invalid && confirmpasscode.touched"
+             class="form-control "
+             name="sdfsdfsdf" [(ngModel)]="user.password" placeholder="confirm password">
+      <small class="text-danger" [class.d-none]="confirmpasscode.valid || confirmpasscode.untouched">enter valid password
+      </small>
+
+    </div>
+<!--
   <div class="form-group  ">
     <input [(ngModel)]="user.username" name="txtUserName" id="inputusername  " type="text"   class="form-control"  placeholder="username" >
   </div>
@@ -27,10 +44,16 @@
     <input [(ngModel)]="user.password" name="txtpassword" id="inputpassword" type="password"  class="form-control"  placeholder="password" >
   </div>
 
+    -->
+
 
   <div class="form-group  ">
 
-    <button routerLink="/dashboard" routerLinkActive="active" type="button" (click)="login()" class="btn btn-outline-success float-right mt-2">Sign in</button>
+    <button  routerLink="/dashboard" (click)="login()" routerLinkActive="active" type="submit" class="btn" [disabled]="frmLogin.invalid"><span>Signin</span>
+    </button>
+    <label class="col-form-label col-form-label-sm" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut consequatur </label>
+
+
   </div>
 
 

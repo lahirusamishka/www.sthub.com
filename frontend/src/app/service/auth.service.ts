@@ -35,36 +35,14 @@ export class AuthService {
       )
   }
 
-/*
-  getAllCustomers(): Observable<Array<Customer>>{
-    return this.http.get<Array<Customer>>(MAIN_URL + URL);
-  }*/
-
-/*
-  deleteCustomer(id: string): Observable<boolean>{
-    return this.http.delete<boolean>(MAIN_URL+ URL + "/" + id);
-  }
-*/
-
   saveTeacher(teacher: Teacher): Observable<boolean>{
     return this.http.post<boolean>(MAIN_URL + URL,teacher);
   }
 
-/*
-  getTotalCustomers(): Observable<number>{
-    return this.http.get<number>(MAIN_URL + URL + "/count");
-  }
-*/
 
   searchTeacher(username :String): Observable<Teacher>{
     return this.http.get<Teacher>(MAIN_URL + URL + "/"+username);
   }
-
-
-
-
-
-
 
   static isAuthenticated(): boolean{
     if (sessionStorage.getItem("token")){

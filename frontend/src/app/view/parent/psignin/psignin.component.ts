@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Parent} from "../../../dto/parent";
 import {ParentService} from "../../../service/parent.service";
+import {User} from "../../../dto/user";
 
 @Component({
   selector: 'app-psignin',
@@ -9,17 +10,17 @@ import {ParentService} from "../../../service/parent.service";
 })
 export class PsigninComponent implements OnInit {
 
-  parent:Parent = new Parent();
+  user: User = new User();
   failed: boolean;
+  validatermassage:string;
 
-  inValidLogin:boolean;
 
   constructor(private parentService: ParentService) { }
 
   ngOnInit() {
   }
   login(): void{
-    this.parentService.login(this.parent).subscribe(
+    this.parentService.login(this.user).subscribe(
       (result)=>{
 
         this.failed = !result;

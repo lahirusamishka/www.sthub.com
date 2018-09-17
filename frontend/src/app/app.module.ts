@@ -41,6 +41,8 @@ import {AdminService} from "./service/admin.service";
 import { SettingsComponent } from './view/main/settings/settings.component';
 import { StudentManageComponent } from './view/main/student-manage/student-manage.component';
 import {TeamService} from "./service/team.service";
+import { LoginpageComponent } from './view/loginpage/loginpage.component';
+import { HomemainComponent } from './view/home/homemain/homemain.component';
 
 
 @NgModule({
@@ -71,7 +73,9 @@ import {TeamService} from "./service/team.service";
     Main3Component,
     AdminDashboardComponent,
     SettingsComponent,
-    StudentManageComponent
+    StudentManageComponent,
+    LoginpageComponent,
+    HomemainComponent
   ],
 
   imports: [

@@ -23,6 +23,7 @@ import {AdminDashboardComponent} from "./view/main3/admin-dashboard/admin-dashbo
 import {Main3Component} from "./view/main3/main3.component";
 import {SettingsComponent} from "./view/main/settings/settings.component";
 import {StudentManageComponent} from "./view/main/student-manage/student-manage.component";
+import {LoginpageComponent} from "./view/loginpage/loginpage.component";
 
 
 const appRoutes: Routes = [
@@ -59,10 +60,9 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: 'home', component: HomeComponent,
-
-    children: [
-
+    path: 'home', component: HomeComponent  },
+  {
+    path:'loginpage',component:LoginpageComponent,children:[
       {
         path: 'teacher', component: TeacherComponent, children: [
           {path: 'tsignin', component: TsigninComponent},
@@ -75,10 +75,9 @@ const appRoutes: Routes = [
           {path: 'psignup', component: PsignupComponent}
         ]
       }
-
-
     ]
   },
+
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

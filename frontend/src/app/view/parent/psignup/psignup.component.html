@@ -1,22 +1,75 @@
-<div class="section-header">
+<div class="section-header" xmlns="http://www.w3.org/1999/html">
+  <br>
+  <br>
+  <br>
   <h3 class="text-center">SIGN UP</h3>
 </div>
 
-<div class="col-sm">
 
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
+<form #frmTeacher="ngForm" (submit)="SignUpParent()">
+  <div class="col-sm">
+
+
+    <div class="form-group  ">
+      <input type="text" required #name="ngModel" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$"
+             [class.is-invalid]="name.invalid && name.touched" class="form-control "
+             name="user" [(ngModel)]="parent.name" placeholder="enter user name">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid username</small>
+
+    </div>
+
+    <div class="form-group  ">
+      <input type="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             [class.is-invalid]="email.invalid && email.touched" class="form-control "
+             name="email" [(ngModel)]="parent.email" placeholder=" enter email address">
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched">please enter valid email</small>
+    </div>
+
+
+    <div class="form-group  ">
+      <input type="text" required #address1="ngModel" pattern=""
+             [class.is-invalid]="address1.invalid && address1.touched" class="form-control "
+             name="addreasdasdasdsplace" [(ngModel)]="parent.address" placeholder="enter address">
+      <small class="text-danger" [class.d-none]="address1.valid || address1.untouched">please enter valid address</small>
+
+    </div>
+
+    <div class="form-group  ">
+      <input type="text" required #number="ngModel" pattern="[0-9]{10}"
+             [class.is-invalid]="number.invalid && number.touched" class="form-control "
+             name="number" [(ngModel)]="parent.contact" placeholder="enter mobile number">
+      <small class="text-danger" [class.d-none]="number.valid || number.untouched">please enter valid contact number</small>
+
+    </div>
+
+    <div class="form-group  ">
+      <input type="password" required #passcode="ngModel"
+             pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+             [class.is-invalid]="passcode.invalid && passcode.touched" class="form-control"
+             name="sdfsddff" [(ngModel)]="parent.scode" placeholder="password">
+      <small class="text-danger" [class.d-none]="passcode.valid || passcode.untouched">password must contain at least 8
+        characters, including UPPER/lowercase and number
+      </small>
+
+    </div>
+
+    <div class="form-group  ">
+      <input type="password" required #confirmpasscode="ngModel"
+             pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+             [class.is-invalid]="confirmpasscode.invalid && confirmpasscode.touched"
+             class="form-control"
+             name="sdfsdfsdf" [(ngModel)]="rescode" placeholder="confirm password">
+      <small class="text-danger" [class.d-none]="confirmpasscode.valid || confirmpasscode.untouched || passcode==confirmpasscode ">enter the same
+        password as above
+      </small>
+
+    </div>
+
+    <div class="form-group col col-md-12  ">
+
+      <button type="submit" class="btn" [disabled]="frmTeacher.invalid"><span>Signup</span>
+      </button>
+      <label class="col-form-label col-form-label-sm" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut consequatur </label>
+    </div>
   </div>
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
-  </div>
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
-  </div>
-  <div class="form-group  ">
-    <input name="txtUserName" type="text" class="form-control" id="formGroupExampleIn" placeholder="username">
-  </div>
-  <div class="form-group  ">
-    <button type="button" class="btn btn-outline-success">Success</button>
-  </div>
-</div>
+</form>

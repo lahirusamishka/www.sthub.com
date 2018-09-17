@@ -5,6 +5,9 @@ import {NgForm} from "@angular/forms";
 import {b, rS} from "@angular/core/src/render3";
 import {Router} from "@angular/router";
 import {MainComponent} from "../../main/main.component";
+import swal from 'sweetalert';
+import {User} from "../../../dto/user";
+
 
 
 @Component({
@@ -14,6 +17,7 @@ import {MainComponent} from "../../main/main.component";
 })
 export class TsignupComponent implements OnInit {
 
+  rescode:string;
 
   @ViewChild("frmTeacher") frmCustomers: NgForm;
   teacher: Teacher = new Teacher();
@@ -26,11 +30,24 @@ export class TsignupComponent implements OnInit {
   }
 
   SignUpTeacher() {
+
+
+
     let booleanObservable = this.teacherService.saveTeacher(this.teacher).subscribe(
       (result) => {
         if (result) {
+          swal({
+            title: "Good job!",
+            icon: "success"
 
-          this.router.navigate(['/home/teacher/tsignin']);
+          });
+          this.router.navigate(['/loginpage/teacher/tsignin']);
+        }else {
+          swal({
+            title: "Try again",
+            icon: "warning",
+
+          });
         }
       }
     );

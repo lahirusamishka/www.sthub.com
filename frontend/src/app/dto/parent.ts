@@ -1,6 +1,8 @@
 export class Parent {
-
-  username: string;
-  password: string;
+  name: string;
+  email: string;
+  address: string;
+  contact: string;
+  scode: string;
 
 }
