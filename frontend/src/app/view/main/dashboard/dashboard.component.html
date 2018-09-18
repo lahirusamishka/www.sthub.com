@@ -7,7 +7,7 @@
     <input class="form-control form-control-sm " [(ngModel)]="seaechNumber" name="textNumber" type="search" placeholder="Search" aria-label="Search">
 
 
-    <button class="btn btn-outline-success my-2 my-sm-0 form-control-sm fa fa-search" (click)="searchTeam()" type="submit"></button>
+    <button class="btn btn-outline-success my-2 my-sm-0 form-control-sm fa fa-search" [(ngModel)]="searchbar" (click)="searchTeam()" type="submit"></button>
 
 
 
@@ -61,7 +61,7 @@
 
       <div class="form-check">
         <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value=""
-               id="invalidCheck3" required>
+               id="invalidCheck3" >
         <label class="form-check-label" for="invalidCheck3">
           private group
         </label>
@@ -70,14 +70,19 @@
 
 
     </div>
-    <button type="submit" class="btn btn-success ">Save</button>
-    <br>
-    <br>
-    <p class="font-awesome">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae est facere
-      fugit in itaque maiores maxime nemo nostrum officiis perspiciatis, placeat possimus quas qui quis quisquam
-      voluptates. Repellendus!</p>
+    <button type="submit" class="btn btn-success shadow p-3 mb-5 btn-sm ">Save Team</button> &nbsp;
+
+    <button type="button" routerLink="student-manage" routerLinkActive="active" [disabled]="!selectedTeam.teamid" class="btn btn-info shadow p-3 mb-5 btn-sm  ">Add New Team Member</button> &nbsp;
+
+    <button type="button" (click)="claerform()" class="btn btn-warning shadow p-3 mb-5 btn-sm ">Refresh</button> &nbsp;
+
+
+
+
   </form>
 
+
+    <router-outlet></router-outlet>
   <br>
   <h3 class="font-weight-bold">All Team</h3>
   <div class="col-md-9 col-12">

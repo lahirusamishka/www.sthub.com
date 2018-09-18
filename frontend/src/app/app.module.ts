@@ -43,6 +43,7 @@ import { StudentManageComponent } from './view/main/student-manage/student-manag
 import {TeamService} from "./service/team.service";
 import { LoginpageComponent } from './view/loginpage/loginpage.component';
 import { HomemainComponent } from './view/home/homemain/homemain.component';
+import {StudentService} from "./service/student.service";
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { HomemainComponent } from './view/home/homemain/homemain.component';
     ParentService,
     AdminGuard,
     AdminService,
-    TeamService
+    TeamService,
+    StudentService
   ],
   bootstrap: [AppComponent]
 })

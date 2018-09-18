@@ -2,38 +2,45 @@ package lk.ijse.sthub.dto;
 
 public class StudentDTO {
 
-    private Long stId;
 
-    private String name;
+
+    private String studentname;
+    private String email;
     private String address;
     private String contact;
-    private String email;
+
+    private String teachername;
+    private Long teamid;
+    private Long recodebook;
+
 
     public StudentDTO() {
     }
 
-    public StudentDTO(Long stId, String name, String address, String contact, String email) {
-        this.stId = stId;
-        this.name = name;
+    public StudentDTO(String studentname, String email, String address, String contact, String teachername, Long teamid, Long recodebook) {
+        this.studentname = studentname;
+        this.email = email;
         this.address = address;
         this.contact = contact;
+        this.teachername = teachername;
+        this.teamid = teamid;
+        this.recodebook = recodebook;
+    }
+
+    public String getStudentname() {
+        return studentname;
+    }
+
+    public void setStudentname(String studentname) {
+        this.studentname = studentname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getStId() {
-        return stId;
-    }
-
-    public void setStId(Long stId) {
-        this.stId = stId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getAddress() {
@@ -52,22 +59,40 @@ public class StudentDTO {
         this.contact = contact;
     }
 
-    public String getEmail() {
-        return email;
+    public String getTeachername() {
+        return teachername;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTeachername(String teachername) {
+        this.teachername = teachername;
+    }
+
+    public Long getTeamid() {
+        return teamid;
+    }
+
+    public void setTeamid(Long teamid) {
+        this.teamid = teamid;
+    }
+
+    public Long getRecodebook() {
+        return recodebook;
+    }
+
+    public void setRecodebook(Long recodebook) {
+        this.recodebook = recodebook;
     }
 
     @Override
     public String toString() {
         return "StudentDTO{" +
-                "stId=" + stId +
-                ", name='" + name + '\'' +
+                "studentname='" + studentname + '\'' +
+                ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
+                ", teachername='" + teachername + '\'' +
+                ", teamid=" + teamid +
+                ", recodebook=" + recodebook +
                 '}';
     }
 }

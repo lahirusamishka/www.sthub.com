@@ -6,42 +6,47 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "stId")
-    private Long stId;
+    private String studentname;
 
-    private String name;
+    private String email;
     private String address;
     private String contact;
-    private String email;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Teacher teacher;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Team team;
+    @OneToOne(cascade = CascadeType.ALL)
+    private RecodeBook recodeBook;
+
 
     public Student() {
     }
 
-
-    public Student(Long stId, String name, String address, String contact, String email) {
-        this.stId = stId;
-        this.name = name;
+    public Student(String studentname, String email, String address, String contact, Teacher teacher, Team team, RecodeBook recodeBook) {
+        this.studentname = studentname;
+        this.email = email;
         this.address = address;
         this.contact = contact;
+        this.teacher = teacher;
+        this.team = team;
+        this.recodeBook = recodeBook;
+    }
+
+    public String getStudentname() {
+        return studentname;
+    }
+
+    public void setStudentname(String studentname) {
+        this.studentname = studentname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
-    }
-
-
-    public Long getStId() {
-        return stId;
-    }
-
-    public void setStId(Long stId) {
-        this.stId = stId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getAddress() {
@@ -60,22 +65,40 @@ public class Student {
         this.contact = contact;
     }
 
-    public String getEmail() {
-        return email;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public RecodeBook getRecodeBook() {
+        return recodeBook;
+    }
+
+    public void setRecodeBook(RecodeBook recodeBook) {
+        this.recodeBook = recodeBook;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "stId=" + stId +
-                ", name='" + name + '\'' +
+                "studentname='" + studentname + '\'' +
+                ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
+                ", teacher=" + teacher +
+                ", team=" + team +
+                ", recodeBook=" + recodeBook +
                 '}';
     }
 }

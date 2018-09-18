@@ -54,7 +54,7 @@ export class ParentService {
 
   logout(): void{
     sessionStorage.removeItem("token");
-    this.router.navigate(['/home']);
+    this.router.navigate(['/loginpage/parent/psignin']);
   }
 
 }

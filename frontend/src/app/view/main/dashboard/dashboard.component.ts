@@ -3,6 +3,8 @@ import {AuthService} from "../../../service/auth.service";
 import {Teacher} from "../../../dto/teacher";
 import {Team} from "../../../dto/team";
 import {TeamService} from "../../../service/team.service";
+import {StudentService} from "../../../service/student.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +12,8 @@ import {TeamService} from "../../../service/team.service";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  searchbar:string;
 
   seaechNumber: number;
 
@@ -19,7 +23,7 @@ export class DashboardComponent implements OnInit {
   manuallySelected: boolean = false;
   teams: Array<Team> = [];
 
-  constructor(private authService: AuthService, private teamService: TeamService) {
+  constructor(private authService: AuthService, private teamService: TeamService,private studentService:StudentService,private router:Router) {
   }
 
   ngOnInit() {
@@ -36,10 +40,13 @@ export class DashboardComponent implements OnInit {
 
   searchTeam() {
 
+
+
     this.teamService.searchTeam(this.seaechNumber).subscribe(
       (result)=>{
 
         this.selectedTeam=result;
+        this.studentService.setSearchTeam(this.selectedTeam);
       }
     )
 
@@ -59,6 +66,20 @@ export class DashboardComponent implements OnInit {
     )
   }
 
+  claerform(){
+
+
+    let index = this.teams.indexOf(this.selectedTeam);
+    if (index !== -1) {
+      this.teams[index] = this.tempTeam;
+      this.tempTeam = null;
+    }
+    this.selectedTeam = new Team();
+    this.manuallySelected = false;
+    this.router.navigate(['/main/dashboard']);
+  }
+
+
   loadAllTeams(username: string): void {
     this.teamService.getAllTeam(username).subscribe(
       (result) => {
@@ -69,6 +90,7 @@ export class DashboardComponent implements OnInit {
 
   selectTeam(team: Team): void {
     // this.clear();
+  /*  this.searchTeam();*/
     this.selectedTeam = team;
     this.tempTeam = Object.assign({}, team);
     this.manuallySelected = true;

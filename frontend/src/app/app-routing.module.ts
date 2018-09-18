@@ -32,25 +32,29 @@ const appRoutes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: "dashboard", component: DashboardComponent},
-      {path: "settings" ,component: SettingsComponent},
-      {path: "student-manage",component:StudentManageComponent}
+      {
+        path: "dashboard", component: DashboardComponent, children: [
+          {path: "student-manage", component: StudentManageComponent}
+        ]
+      },
+      {path: "settings", component: SettingsComponent},
+      {path: "student-manage", component: StudentManageComponent}
     ]
   },
   {
-    path:"main2",
-    component:Main2Component,
-    canActivate:[ParentGuard],
-    children:[
-      {path:"dashboard-parent", component: DashboardParentComponent}
+    path: "main2",
+    component: Main2Component,
+    canActivate: [ParentGuard],
+    children: [
+      {path: "dashboard-parent", component: DashboardParentComponent}
     ]
   },
   {
-     path:"main3",
-    component:Main3Component,
-    canActivate:[AdminGuard],
-    children:[
-      {path:"admin-dashboard",component: AdminDashboardComponent}
+    path: "main3",
+    component: Main3Component,
+    canActivate: [AdminGuard],
+    children: [
+      {path: "admin-dashboard", component: AdminDashboardComponent}
     ]
   },
   {
@@ -60,9 +64,10 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: 'home', component: HomeComponent  },
+    path: 'home', component: HomeComponent
+  },
   {
-    path:'loginpage',component:LoginpageComponent,children:[
+    path: 'loginpage', component: LoginpageComponent, children: [
       {
         path: 'teacher', component: TeacherComponent, children: [
           {path: 'tsignin', component: TsigninComponent},

@@ -19,28 +19,7 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public boolean saveRegister(RegisterDTO registerDTO) {
+        return false;
 
-
-        StudentDTO studentDTO = registerDTO.getStudentDTO();
-
-        Student student = new Student();
-
-        student.setStId(studentDTO.getStId());
-
-        student.setName(studentDTO.getName());
-        student.setAddress(studentDTO.getAddress());
-        student.setContact(studentDTO.getContact());
-        student.setEmail(studentDTO.getEmail());
-
-        Register register = new Register();
-        register.setrID(registerDTO.getrID());
-        register.setDate(registerDTO.getDate());
-        register.setTeamID(registerDTO.getTeamId());
-        register.setStudent(student);
-
-        registerRepository.save(register);
-
-
-        return true;
     }
 }

@@ -11,9 +11,9 @@ public interface StudentService {
 
     public ArrayList<StudentDTO> getAllStudent();
 
-    public StudentDTO getStudent(Long studentId);
+    public StudentDTO getStudent(String studentName);
 
-    public boolean deleteStudent(Long studentId);
+    public boolean deleteStudent(String studentName);
 
     public boolean saveStudent(StudentDTO studentDTO);
 

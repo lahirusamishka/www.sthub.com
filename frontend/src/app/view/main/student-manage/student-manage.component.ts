@@ -3,6 +3,8 @@ import {Team} from "../../../dto/team";
 import {TeamService} from "../../../service/team.service";
 import {AuthService} from "../../../service/auth.service";
 import {Teacher} from "../../../dto/teacher";
+import {StudentService} from "../../../service/student.service";
+import {Student} from "../../../dto/student";
 
 @Component({
   selector: 'app-student-manage',
@@ -11,12 +13,16 @@ import {Teacher} from "../../../dto/teacher";
 })
 export class StudentManageComponent implements OnInit {
 
+  student:Student = new Student();
 
   selectedTeam: Team = new Team();
   teacher: Teacher = new Teacher();
   teams: Array<Team> = [];
 
-  constructor( private teamService: TeamService,private authService: AuthService) { }
+  savedmsg:boolean=false;
+
+
+  constructor( private teamService: TeamService,private authService: AuthService,private studentService:StudentService) { }
 
   ngOnInit() {
     this.authService.searchTeacher(sessionStorage.getItem("scode")).subscribe(
@@ -27,14 +33,25 @@ export class StudentManageComponent implements OnInit {
     )
     this.loadAllTeams(sessionStorage.getItem("scode"));
 
+    this.selectedTeam.teamid=this.studentService.getSearchTeam().teamid;
+
   }
 
 
-  getTeam(){
+  closeAlert(){
+    this.savedmsg=false;
+  }
+
+  saveStudent():void{
 
 
-    alert(this.teams)
-
+    this.student.teamid=this.selectedTeam.teamid;
+    this.student.teachername=this.teacher.name;
+    this.studentService.saveStudent(this.student).subscribe(
+      ((result)=>{
+        this.savedmsg=result;
+      })
+    )
 
   }
 

@@ -1,12 +1,8 @@
-<div class=" card-body shadow p-3 mb-5 bg-light rounded " xmlns="http://www.w3.org/1999/html">
-
-
 <div class="card-body ">
   <div class="form">
-    <form>
+    <form #studentForm="ngForm" (submit)="saveStudent()">
       <span class="badge badge-info">Info</span>
       <h4 class="font-weight-bold">Student Manage</h4>
-
       <div class="form-row">
         <div class="col">
 
@@ -20,172 +16,87 @@
             </div>
           </div>
         </div>
-
-
         <div class="form-group">
+        </div>
+      </div>
 
+
+      <div>
+
+      </div>
+
+      <br>
+
+
+
+      <div class="form-group row ">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Student Name</strong></label>
+        <div class="col-sm-10">
+        <input type="text" required #name="ngModel" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$"
+               [class.is-invalid]="name.invalid && name.touched" class="form-control form-control-sm "
+               name="user" [(ngModel)]="student.studentname" placeholder="enter student name">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid name</small>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
+        <div class="col-sm-10">
+          <input type="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                 [class.is-invalid]="email.invalid && email.touched" class="form-control form-control-sm"
+                 name="email" [(ngModel)]="student.email" placeholder=" enter email address">
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">please enter valid email</small>
         </div>
 
 
       </div>
-    </form>
 
-    <div>
 
-    </div>
-
-    <br>
-    <div class="form-group row ">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Student Name</strong></label>
-      <div class="col">
-
-        <input type="text" class="form-control form-control-sm" placeholder="First name">
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
+        <div class="col-sm-10">
+          <input type="text" required #address1="ngModel" pattern=""
+                 [class.is-invalid]="address1.invalid && address1.touched" class="form-control form-control-sm"
+                 name="addreasdasdasdsplace" [(ngModel)]="student.address" placeholder="enter address">
+          <small class="text-danger" [class.d-none]="address1.valid || address1.untouched">please enter valid address
+          </small>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control form-control-sm" placeholder="Last name">
-      </div>
-    </div>
 
 
-    <div class="form-group row">
+        <div class="form-group row ">
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Contact</strong></label>
+          <div class="col-sm-10">
 
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Email</strong></label>
-      <div class="col">
-        <input type="email" class="form-control form-control-sm" placeholder="Last name">
-      </div>
-    </div>
-
-
-    <div class="form-group row">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control form-control-sm" id="sdfsd" placeholder="Enter Address">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Contact</strong></label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter Contact Number">
-      </div>
-    </div>
-
-
-  </div>
-
-
-
-  <!--
-  -->
-  <div class="form">
-    <form>
-      <span class="badge badge-info">Info</span>
-      <h4 class="font-weight-bold">Team Manage</h4>
-
-      <div class="form-row">
-        <div class="col">
-
-          <div class="form-group">
-            <div class="input-group mb-3">
-
-              <input type="text" class="form-control form-control-sm" placeholder="Team ID">
-              <div class="input-group-append">
-                <span class="input-group-text form-control-sm fa fa-search"></span>
-              </div>
-            </div>
+            <input type="text" required #number="ngModel" pattern="[0-9]{10}"
+                   [class.is-invalid]="number.invalid && number.touched" class="form-control form-control-sm"
+                   id="colFormLabelSm"
+                   name="number" [(ngModel)]="student.contact" placeholder="enter mobile number">
+            <small class="text-danger" [class.d-none]="number.valid || number.untouched">please enter valid contact
+              number
+            </small>
           </div>
         </div>
 
 
-        <div class="form-group">
+        <div class="form">
+          <button type="submit" [disabled]="studentForm.invalid"
+                  class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-get-pocket"> &nbsp; Add
+          </button> &nbsp;
+        </div>
+        <br>
+        <br>
 
+
+        <div [hidden]="!savedmsg" class="alert alert-dismissible alert-success section-bg wow fadeInDown">
+          <button type="button" (click)="closeAlert()" class="close" data-dismiss="alert">&times;</button>
+          <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert
+          message</a>.
         </div>
 
-
-      </div>
     </form>
-
-    <div>
-
-    </div>
-
-    <br>
-
-    <div class="form-group row ">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Team No.</strong></label>
-      <div class="col">
-
-        <input type="text" class="form-control form-control-sm" placeholder="First name">
-      </div>
-
-    </div>
-    <div class="form-group row ">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Subject</strong></label>
-      <div class="col">
-
-        <input type="text" class="form-control form-control-sm" placeholder="First name">
-      </div>
-
-    </div>
-
-
-    <div class="form-group row">
-
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Discription</strong></label>
-      <div class="col">
-        <input type="email" class="form-control form-control-sm" placeholder="Last name">
-      </div>
-    </div>
-
-
-    <div class="form-group row">
-      <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>visibility</strong></label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control form-control-sm" id="sdfsd" placeholder="Enter Address">
-      </div>
-    </div>
-
-    <button type="button" [disabled]="true" class="btn btn-success btn-sm float-right">Save Student</button>
-
-    <button type="button" [disabled]="false" (click)="getTeam()" class="btn btn-success btn-sm float-right">Save Student</button>
-
   </div>
+
+
 </div>
-</div>
-
-
-<!--
-<div class="col-md-9 col-12">
-  <table id="tblCustomers" class="table table-bordered table-hover">
-    <thead>
-    <tr>
-      <th> ID</th>
-      <th> Subject</th>
-      <th> Discription</th>
-      <th> Visibility</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let team of teams | paginate: { itemsPerPage: 7, currentPage: p }"
-         [class.selected]="team==selectedTeam">
-
-      <td>{{team.teamid}}</td>
-      <td>{{team.subject}}</td>
-      <td>{{team.discription}}</td>
-      <td>{{team.visibles}}</td>
-      <td>
-        <i class="fa fa-trash fa-1x"></i>
-      </td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <td colspan="4">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-      </td>
-    </tr>
-    </tfoot>
-  </table>
-</div>-->
-
-

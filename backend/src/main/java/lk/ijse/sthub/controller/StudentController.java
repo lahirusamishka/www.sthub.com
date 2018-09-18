@@ -29,17 +29,18 @@ public class StudentController {
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public StudentDTO getStudent(@PathVariable("id") Long studentId) {
-        return studentService.getStudent(studentId);
+    public StudentDTO getStudent(@PathVariable("id") String studehtName) {
+        return studentService.getStudent(studehtName);
     }
 
     @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean deleteStudent(@PathVariable("id") Long studentId){
-        return studentService.deleteStudent(studentId);
+    public boolean deleteStudent(@PathVariable("id") String studehtName){
+        return studentService.deleteStudent(studehtName);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveStudent(@RequestBody StudentDTO studentDTO){
+
         return studentService.saveStudent(studentDTO);
     }
 

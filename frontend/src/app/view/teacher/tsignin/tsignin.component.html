@@ -19,8 +19,8 @@
 
       <input type="text" required #name="ngModel" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$"
              [class.is-invalid]="name.invalid && name.touched" class="form-control "
-             name="user" [(ngModel)]="user.username" placeholder="enter user name">
-      <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid username</small>
+             name="user" [(ngModel)]="user.username" placeholder="username">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">username is incorrect</small>
 
     </div>
 
@@ -30,9 +30,8 @@
              pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
              [class.is-invalid]="confirmpasscode.invalid && confirmpasscode.touched"
              class="form-control "
-             name="sdfsdfsdf" [(ngModel)]="user.password" placeholder="confirm password">
-      <small class="text-danger" [class.d-none]="confirmpasscode.valid || confirmpasscode.untouched">enter valid password
-      </small>
+             name="sdfsdfsdf" [(ngModel)]="user.password" placeholder="password">
+      <small class="text-danger" [class.d-none]="confirmpasscode.valid || confirmpasscode.untouched">password is incorrect </small>
 
     </div>
 <!--
