@@ -23,18 +23,28 @@ public class StudentController {
     }
 
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/all",produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<StudentDTO> getAllCustomer() {
+        System.out.println("get all normal");
         return studentService.getAllStudent();
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public StudentDTO getStudent(@PathVariable("id") String studehtName) {
+        System.out.println("get all student id");
         return studentService.getStudent(studehtName);
+    }
+
+    @GetMapping(value = "/student2/{teachername}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<StudentDTO> getAllStudent(@PathVariable("teachername")String teacherName) {
+        System.out.println("get all teacher anem"+teacherName);
+        return studentService.getAllStudent2(teacherName);
+
     }
 
     @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean deleteStudent(@PathVariable("id") String studehtName){
+
         return studentService.deleteStudent(studehtName);
     }
 

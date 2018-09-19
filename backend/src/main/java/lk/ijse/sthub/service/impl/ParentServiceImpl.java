@@ -62,15 +62,17 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public boolean saveParent(ParentDTO parentDTO) {
-        Parent student = new Parent(
-                parentDTO.getName(),
-                parentDTO.getAddress(),
-                parentDTO.getContact(),
-                parentDTO.getEmail(),
-                parentDTO.getScode()
-        );
+        Parent parent = new Parent();
 
-        parentRepository.save(student);
+        parent.setName(parentDTO.getName());
+        parent.setEmail(parentDTO.getEmail());
+        parent.setAddress(parentDTO.getAddress());
+        parent.setContact(parentDTO.getContact());
+        parent.setScode(parentDTO.getScode());
+
+
+
+        parentRepository.save(parent);
         return true;
     }
 

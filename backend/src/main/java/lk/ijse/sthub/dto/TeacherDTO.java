@@ -7,16 +7,18 @@ public class TeacherDTO {
     private String address;
     private String contact;
     private String scode;
+    private String status;
 
     public TeacherDTO() {
     }
 
-    public TeacherDTO(String name, String address, String contact, String email, String scode) {
+    public TeacherDTO(String name, String email, String address, String contact, String scode, String status) {
         this.name = name;
+        this.email = email;
         this.address = address;
         this.contact = contact;
-        this.email = email;
         this.scode = scode;
+        this.status = status;
     }
 
     public String getName() {
@@ -25,6 +27,14 @@ public class TeacherDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -43,14 +53,6 @@ public class TeacherDTO {
         this.contact = contact;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getScode() {
         return scode;
     }
@@ -59,14 +61,23 @@ public class TeacherDTO {
         this.scode = scode;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "TeacherDTO{" +
                 "name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
                 ", scode='" + scode + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

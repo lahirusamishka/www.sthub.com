@@ -44,6 +44,16 @@ import {TeamService} from "./service/team.service";
 import { LoginpageComponent } from './view/loginpage/loginpage.component';
 import { HomemainComponent } from './view/home/homemain/homemain.component';
 import {StudentService} from "./service/student.service";
+import { UpdatestudentComponent } from './view/main/updatestudent/updatestudent.component';
+import { ManageStudentComponent } from './view/main3/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './view/main3/manage-teacher/manage-teacher.component';
+import { ManageTeamComponent } from './view/main3/manage-team/manage-team.component';
+import { ManageParentComponent } from './view/main3/manage-parent/manage-parent.component';
+import { ManageSettingsComponent } from './view/main3/manage-settings/manage-settings.component';
+import {SwalParams, SweetAlert} from "sweetalert/typings/core";
+import {SweetAlertService} from "angular-sweetalert-service";
+import {NgxAlertsService} from "ngx-alerts/lib/ngx-alerts.service";
+import { RecodebookComponent } from './view/main/recodebook/recodebook.component';
 
 
 @NgModule({
@@ -76,7 +86,15 @@ import {StudentService} from "./service/student.service";
     SettingsComponent,
     StudentManageComponent,
     LoginpageComponent,
-    HomemainComponent
+    HomemainComponent,
+    UpdatestudentComponent,
+    ManageStudentComponent,
+    ManageTeacherComponent,
+    ManageTeamComponent,
+    ManageParentComponent,
+    ManageSettingsComponent,
+    RecodebookComponent,
+
   ],
 
   imports: [
@@ -84,7 +102,7 @@ import {StudentService} from "./service/student.service";
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
 
   ],
 
@@ -97,7 +115,11 @@ import {StudentService} from "./service/student.service";
     AdminService,
     TeamService,
     StudentService
+
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

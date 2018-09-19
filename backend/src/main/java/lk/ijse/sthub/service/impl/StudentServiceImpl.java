@@ -4,6 +4,7 @@ package lk.ijse.sthub.service.impl;
 import lk.ijse.sthub.dto.StudentDTO;
 import lk.ijse.sthub.dto.TeacherDTO;
 import lk.ijse.sthub.dto.TeamDTO;
+import lk.ijse.sthub.entity.RecodeBook;
 import lk.ijse.sthub.entity.Student;
 import lk.ijse.sthub.entity.Teacher;
 import lk.ijse.sthub.entity.Team;
@@ -39,10 +40,29 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public ArrayList<StudentDTO> getAllStudent() {
-        List<Student> allstudents = studentRepository.findAll();
+
+        ArrayList<Student> studentArrayList = studentRepository.getallTems2();
+
         ArrayList<StudentDTO> studentDTOS = new ArrayList<>();
 
-        for (Student student : allstudents) {
+        for (Student student : studentArrayList) {
+
+            StudentDTO studentDTO = new StudentDTO();
+            studentDTO.setStudentname(student.getStudentname());
+            studentDTO.setEmail(student.getEmail());
+            studentDTO.setAddress(student.getAddress());
+            studentDTO.setContact(student.getContact());
+            studentDTO.setTeachername(student.getTeacher().getName());
+            studentDTO.setTeamid(student.getTeam().getTeamid());
+
+
+            studentDTOS.add(studentDTO);
+
+        }
+
+
+        return studentDTOS;
+        /*for (Student student : studentArrayList) {
             StudentDTO studentDTO = new StudentDTO(
                     student.getStudentname(),
                     student.getEmail(),
@@ -50,37 +70,52 @@ public class StudentServiceImpl implements StudentService {
                     student.getContact(),
                     student.getTeacher().getName(),
                     student.getTeam().getTeamid(),
-                    student.getRecodeBook().getRecodeBookId()
-            );
+                    student.getRecodeBook().getRecodeBookId());
 
             studentDTOS.add(studentDTO);
 
-        }
-        return studentDTOS;
+        }*/
+
+        /*   return studentDTOS;*/
+
     }
 
     @Override
     public StudentDTO getStudent(String studentName) {
+
         Student student = studentRepository.findById(studentName).get();
 
-        return new StudentDTO(
-                student.getStudentname(),
-                student.getEmail(),
-                student.getAddress(),
-                student.getContact(),
-                student.getTeacher().getName(),
-                student.getTeam().getTeamid(),
-                student.getRecodeBook().getRecodeBookId()
-        );
+        Team team = student.getTeam();
+        Teacher teacher = student.getTeacher();
+
+
+        StudentDTO studentDTO = new StudentDTO();
+
+        studentDTO.setStudentname(student.getStudentname());
+        studentDTO.setEmail(student.getStudentname());
+        studentDTO.setAddress(student.getStudentname());
+        studentDTO.setContact(student.getStudentname());
+        studentDTO.setTeamid(team.getTeamid());
+
+        studentDTO.setTeachername(teacher.getName());
+
+        return studentDTO;
+
+
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
+
     public boolean deleteStudent(String studentName) {
-        studentRepository.deleteById(studentName);
+
+        Student student = studentRepository.findById(studentName).get();
+
+
+        student.setStatus("delete");
+
+        studentRepository.save(student);
         return true;
     }
-
 
 
     @Override
@@ -90,7 +125,7 @@ public class StudentServiceImpl implements StudentService {
         Teacher teacher = teacherRepository.findById(studentDTO.getTeachername()).get();
         Team team = teamRepository.findById(studentDTO.getTeamid()).get();
 
-        Student student= new Student();
+        Student student = new Student();
 
         student.setStudentname(studentDTO.getStudentname());
         student.setEmail(studentDTO.getEmail());
@@ -98,6 +133,7 @@ public class StudentServiceImpl implements StudentService {
         student.setContact(studentDTO.getContact());
         student.setTeacher(teacher);
         student.setTeam(team);
+        student.setStatus("active");
 
         studentRepository.save(student);
         return true;
@@ -106,6 +142,39 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public long getTotalStudent() {
-       return studentRepository.getTotalStudents();
+        return studentRepository.getTotalStudents();
+    }
+
+    @Override
+    public ArrayList<StudentDTO> getAllStudent2(String teacherName) {
+        ArrayList<Student> students22 = studentRepository.getallTems2();
+
+        ArrayList<StudentDTO> studentDTOS = new ArrayList<>();
+
+        for (Student student : students22) {
+
+            if (teacherName.equals(student.getTeacher().getName())) {
+                if (!"delete".equals(student.getStatus())) {
+                    Team team = student.getTeam();
+                    StudentDTO studentDTO = new StudentDTO();
+
+                    studentDTO.setStudentname(student.getStudentname());
+                    studentDTO.setEmail(student.getEmail());
+                    studentDTO.setAddress(student.getAddress());
+                    studentDTO.setContact(student.getContact());
+                    studentDTO.setTeachername(team.getTeacher().getName());
+                    studentDTO.setTeamid(team.getTeamid());
+
+
+                    studentDTOS.add(studentDTO);
+
+                }
+
+
+            }
+        }
+        System.out.println(studentDTOS);
+        return studentDTOS;
+
     }
 }

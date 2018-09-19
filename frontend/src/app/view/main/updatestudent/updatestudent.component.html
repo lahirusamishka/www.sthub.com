@@ -1,0 +1,144 @@
+<div class=" card-body shadow p-3 mb-5 bg-light rounded section-bg wow fadeIn  ">
+<div class="card-body ">
+  <div class="form">
+    <form #studentForm="ngForm" (submit)="saveStudent()">
+      <span class="badge badge-info">Info</span>
+      <h4 class="font-weight-bold">Student Manage</h4>
+      <div class="form-row">
+        <div class="col">
+
+          <div class="form-group">
+            <div class="input-group mb-3">
+
+              <input type="text" name="searchStudent" [(ngModel)]="searcStudentss" class="form-control form-control-sm" placeholder="Search Student Name">
+              <div class="input-group-append">
+                <a (click)="searchStudent()"  >  <span class="input-group-text form-control-sm fa fa-search"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+        </div>
+      </div>
+
+
+      <div>
+
+      </div>
+
+      <br>
+
+
+
+      <div class="form-group row ">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Student Name</strong></label>
+        <div class="col-sm-10">
+          <input type="text" required #name="ngModel" pattern=""
+                 [class.is-invalid]="name.invalid && name.touched" class="form-control form-control-sm "
+                 name="user" [(ngModel)]="selectStudent.studentname" placeholder="enter student name">
+          <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid name</small>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
+        <div class="col-sm-10">
+          <input type="email" required #email="ngModel" pattern=""
+                 [class.is-invalid]="email.invalid && email.touched" class="form-control form-control-sm"
+                 name="email" [(ngModel)]="selectStudent.email" placeholder=" enter email address">
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">please enter valid email</small>
+        </div>
+
+
+      </div>
+
+
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
+        <div class="col-sm-10">
+          <input type="text" required #address1="ngModel" pattern=""
+                 [class.is-invalid]="address1.invalid && address1.touched" class="form-control form-control-sm"
+                 name="addreasdasdasdsplace" [(ngModel)]="selectStudent.address" placeholder="enter address">
+          <small class="text-danger" [class.d-none]="address1.valid || address1.untouched">please enter valid address
+          </small>
+        </div>
+      </div>
+
+
+      <div class="form-group row ">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Contact</strong></label>
+        <div class="col-sm-10">
+
+          <input type="text" required #number="ngModel" pattern="[0-9]{10}"
+                 [class.is-invalid]="number.invalid && number.touched" class="form-control form-control-sm"
+                 id="colFormLabelSm"
+                 name="number" [(ngModel)]="selectStudent.contact" placeholder="enter mobile number">
+          <small class="text-danger" [class.d-none]="number.valid || number.untouched">please enter valid contact
+            number
+          </small>
+        </div>
+      </div>
+
+
+      <div class="form">
+        <button type="submit" [disabled]="studentForm.invalid"
+                class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-get-pocket"> &nbsp; Add
+        </button> &nbsp;
+      </div>
+      <br>
+      <br>
+
+
+      <div [hidden]="!savedmsg" class="alert alert-dismissible alert-success section-bg wow fadeInDown">
+        <button type="button" (click)="closeAlert()" class="close" data-dismiss="alert">&times;</button>
+        <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert
+        message</a>.
+      </div>
+
+    </form>
+  </div>
+
+
+  <div>
+
+    <table id="tblStudent" class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col"> Name</th>
+        <th scope="col"> Email</th>
+        <th scope="col"> address</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Team No</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let student of students | paginate: { itemsPerPage: 10, currentPage: p } "
+          class="table-light "  (click)="selectStudents(student)" [class.selected]="student==selectStudent" >
+        <td>{{student.studentname}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.contact}}</td>
+        <td>{{student.teamid}}</td>
+
+        <td>
+          <i (click)="deleteStudent(student)" class="deletebutton fa fa-trash-o fa-2x"></i>
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+
+
+
+  </div>
+
+</div>
+</div>

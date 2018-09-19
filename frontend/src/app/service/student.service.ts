@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Student} from "../dto/student";
 import {Team} from "../dto/team";
+import {Teacher} from "../dto/teacher";
 
 const URL = '/api/v1/students';
 
@@ -21,6 +22,11 @@ export class StudentService {
 
   getAllStudents(teamid: Team): Observable<Array<Student>> {
     return this.http.get<Array<Student>>(MAIN_URL + URL + "/" + teamid);
+  }
+
+
+  getAllStudents2(teachername: String): Observable<Array<Student>> {
+    return this.http.get<Array<Student>>(MAIN_URL + URL + "/student2/" + teachername);
   }
 
 
@@ -44,7 +50,7 @@ export class StudentService {
     return this.http.get<number>(MAIN_URL + URL + "/count");
   }
 
-  searchCustomer(studentName: String): Observable<Student> {
+  searchStudent(studentName: String): Observable<Student> {
     return this.http.get<Student>(MAIN_URL + URL + "/" + studentName);
   }
 }

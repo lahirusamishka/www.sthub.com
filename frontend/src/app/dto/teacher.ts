@@ -4,4 +4,5 @@ export class Teacher {
   address: string;
   contact: string;
   scode: string;
+
 }

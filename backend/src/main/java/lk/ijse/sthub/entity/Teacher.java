@@ -11,16 +11,19 @@ public class Teacher {
     private String address;
     private String contact;
     private String scode;
+    private String status;
 
     public Teacher() {
     }
 
-    public Teacher(String name, String address, String contact, String email, String scode) {
+
+    public Teacher(String name, String email, String address, String contact, String scode, String status) {
         this.name = name;
+        this.email = email;
         this.address = address;
         this.contact = contact;
-        this.email = email;
         this.scode = scode;
+        this.status = status;
     }
 
     public String getName() {
@@ -29,6 +32,14 @@ public class Teacher {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -47,14 +58,6 @@ public class Teacher {
         this.contact = contact;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getScode() {
         return scode;
     }
@@ -63,14 +66,23 @@ public class Teacher {
         this.scode = scode;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +
                 "name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
                 ", scode='" + scode + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

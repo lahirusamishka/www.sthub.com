@@ -1,4 +1,4 @@
-<div class=" card-body shadow p-3 mb-5 bg-light rounded ">
+<div class=" card-body shadow p-3 mb-5 bg-light rounded section-bg wow fadeIn  ">
 
   <div class="card-body ">
 
@@ -85,6 +85,7 @@
     <router-outlet></router-outlet>
   <br>
   <h3 class="font-weight-bold">All Team</h3>
+
   <div class="col-md-9 col-12">
     <table id="tblCustomers" class="table table-bordered table-hover">
       <thead>
@@ -98,14 +99,14 @@
       </thead>
       <tbody>
       <tr *ngFor="let team of teams | paginate: { itemsPerPage: 7, currentPage: p }"
-          (click)="selectTeam(team)" [class.selected]="team==selectedTeam">
+          (click)="selectTeam(team)" [class.selected]="team==selectedTeam" class="table-light ">
 
         <td>{{team.teamid}}</td>
         <td>{{team.subject}}</td>
         <td>{{team.discription}}</td>
         <td>{{team.visibles}}</td>
         <td>
-          <i (click)="deleteTeam(team)" class="fa fa-trash fa-1x"></i>
+          <i (click)="deleteTeam(team)" class="deletebutton fa fa-trash-o fa-2x"></i>
         </td>
       </tr>
       </tbody>

@@ -2,7 +2,7 @@
   <div class="container-fluid shadow-lg">
 
     <div id="logo" class="pull-left">
-      <h1><a href="#intro">StHub</a></h1>
+      <h1><a>StHub</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
     </div>
@@ -13,9 +13,10 @@
       <ul class="nav-menu">
 
 
-        <li><a routerLink="/main/dashboard" routerLinkActive="active" href="#about">Team</a></li>
-        <li><a routerLink="/main/student-manage" routerLinkActive="active" href="#about">Student</a></li>
-        <li><a routerLink="/main/settings" routerLinkActive="active" href="#services">Settings</a></li>
+        <li><a routerLink="/main/dashboard" routerLinkActive="active" href="">Team</a></li>
+        <li><a routerLink="/main/updatestudent" routerLinkActive="active" href="">Student</a></li>
+        <li><a routerLink="/main/recodebook" routerLinkActive="active" href="">RecodeBook</a></li>
+        <li><a routerLink="/main/settings" routerLinkActive="active" href="">settings</a></li>
 
 
         <li><a (click)="logout()" href="/loginpage/teacher/tsignin"><i class="fa fa-sign-out" style="font-size:30px"
@@ -50,7 +51,7 @@
         <div class="card-body">
 
           <h5 class="card-title font-weight-bold">{{teacher.name}}</h5>
-          <p class="card-text">{{teacher.email}}</p>
+          <p class="card-text">{{teacher.contact}}</p>
           <!--<a  class="btn btn-primary">Go Profile</a>-->
         </div>
 

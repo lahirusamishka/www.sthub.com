@@ -9,6 +9,7 @@ import {MAIN_URL} from "./auth.service";
 import {Parent} from "../dto/parent";
 import {User} from "../dto/user";
 import {Teacher} from "../dto/teacher";
+import {Student} from "../dto/student";
 
 const URL = '/api/v1/parents';
 const URL2= '/api/v1/parents/login'
@@ -39,12 +40,21 @@ export class ParentService {
     return this.http.post<boolean>(MAIN_URL + URL,parent);
   }
 
+  getAllParents(): Observable<Array<Parent>> {
+    return this.http.get<Array<Parent>>(MAIN_URL + URL);
+  }
+
+  deleteParent(parentNme: string): Observable<boolean> {
+    return this.http.delete<boolean>(MAIN_URL + URL + "/" + parentNme);
+  }
 
   searchTeacher(username :String): Observable<Parent>{
     return this.http.get<Parent>(MAIN_URL + URL + "/"+username);
   }
 
-
+  getTotalTeachers(): Observable<number>{
+    return this.http.get<number>(MAIN_URL + URL + "/count");
+  }
 
   static isAuthenticated(): boolean{
     if (sessionStorage.getItem("token")){

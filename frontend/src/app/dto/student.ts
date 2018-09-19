@@ -6,5 +6,5 @@ export class Student {
   email: string;
   address: string;
   contact: string;
-  recodebook:number;
+  status:string;
 }

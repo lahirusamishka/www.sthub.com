@@ -69,13 +69,6 @@ export class DashboardComponent implements OnInit {
   claerform(){
 
 
-    let index = this.teams.indexOf(this.selectedTeam);
-    if (index !== -1) {
-      this.teams[index] = this.tempTeam;
-      this.tempTeam = null;
-    }
-    this.selectedTeam = new Team();
-    this.manuallySelected = false;
     this.router.navigate(['/main/dashboard']);
   }
 
@@ -111,6 +104,7 @@ export class DashboardComponent implements OnInit {
             alert("Failed to delete the customer");
           }
           this.loadAllTeams(sessionStorage.getItem("scode"));
+
         }
       )
     }

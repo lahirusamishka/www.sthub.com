@@ -55,5 +55,8 @@ export class AuthService {
     this.router.navigate(['/home/teacher/tsignin']);
   }
 
+  getTotalTeachers(): Observable<number>{
+    return this.http.get<number>(MAIN_URL + URL + "/count");
+  }
 
 }

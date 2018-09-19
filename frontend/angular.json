@@ -33,6 +33,7 @@
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/angular-sweetalert-service/js/service/sweetalert2.service.js",
               "node_modules/superfish/dist/js/hoverIntent.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
                "node_modules/jquery/dist/core.js",

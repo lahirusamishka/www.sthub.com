@@ -11,20 +11,20 @@ public class StudentDTO {
 
     private String teachername;
     private Long teamid;
-    private Long recodebook;
+    private String status;
 
 
     public StudentDTO() {
     }
 
-    public StudentDTO(String studentname, String email, String address, String contact, String teachername, Long teamid, Long recodebook) {
+    public StudentDTO(String studentname, String email, String address, String contact, String teachername, Long teamid, String status) {
         this.studentname = studentname;
         this.email = email;
         this.address = address;
         this.contact = contact;
         this.teachername = teachername;
         this.teamid = teamid;
-        this.recodebook = recodebook;
+        this.status = status;
     }
 
     public String getStudentname() {
@@ -75,12 +75,12 @@ public class StudentDTO {
         this.teamid = teamid;
     }
 
-    public Long getRecodebook() {
-        return recodebook;
+    public String getStatus() {
+        return status;
     }
 
-    public void setRecodebook(Long recodebook) {
-        this.recodebook = recodebook;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -92,7 +92,7 @@ public class StudentDTO {
                 ", contact='" + contact + '\'' +
                 ", teachername='" + teachername + '\'' +
                 ", teamid=" + teamid +
-                ", recodebook=" + recodebook +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

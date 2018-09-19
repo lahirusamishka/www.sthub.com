@@ -16,21 +16,19 @@ public class Student {
     private Teacher teacher;
     @ManyToOne(cascade = CascadeType.ALL)
     private Team team;
-    @OneToOne(cascade = CascadeType.ALL)
-    private RecodeBook recodeBook;
-
+    private String status;
 
     public Student() {
     }
 
-    public Student(String studentname, String email, String address, String contact, Teacher teacher, Team team, RecodeBook recodeBook) {
+    public Student(String studentname, String email, String address, String contact, Teacher teacher, Team team, String status) {
         this.studentname = studentname;
         this.email = email;
         this.address = address;
         this.contact = contact;
         this.teacher = teacher;
         this.team = team;
-        this.recodeBook = recodeBook;
+        this.status = status;
     }
 
     public String getStudentname() {
@@ -81,12 +79,12 @@ public class Student {
         this.team = team;
     }
 
-    public RecodeBook getRecodeBook() {
-        return recodeBook;
+    public String getStatus() {
+        return status;
     }
 
-    public void setRecodeBook(RecodeBook recodeBook) {
-        this.recodeBook = recodeBook;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -98,7 +96,7 @@ public class Student {
                 ", contact='" + contact + '\'' +
                 ", teacher=" + teacher +
                 ", team=" + team +
-                ", recodeBook=" + recodeBook +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

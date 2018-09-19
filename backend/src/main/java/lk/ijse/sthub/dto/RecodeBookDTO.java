@@ -2,10 +2,11 @@ package lk.ijse.sthub.dto;
 
 public class RecodeBookDTO {
 
-    private Long recodeBookId;
-    private String subject;
+    private String studentName;
     private String date;
+    private String teatName;
     private long marks;
+    
 
 
     public RecodeBookDTO() {

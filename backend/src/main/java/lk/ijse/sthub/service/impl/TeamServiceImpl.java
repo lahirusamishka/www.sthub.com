@@ -29,12 +29,11 @@ public class TeamServiceImpl implements TeamService {
     @Autowired
     private TeamRepository teamRepository;
 
-
     @Override
     public ArrayList<TeamDTO> getAllTeams(String username) {
 
-
         ArrayList<Team> teamArrayList1 = teamRepository.getallTems();
+
 
 
         ArrayList<TeamDTO> teamDTOS = new ArrayList<>();
@@ -46,64 +45,8 @@ public class TeamServiceImpl implements TeamService {
                 teamDTOS.add(teamDTO);
             }
         }
-
         return teamDTOS;
 
-      /*  for (Team team : all) {
-
-            String name = team.getTeacher().getName();
-            System.out.println(username);
-
-            if (username != "samishka") {
-                System.out.println("aaaaaaaaaaaaaaaaa");
-                TeamDTO teamDTO = new TeamDTO();
-                teamDTO.setTeamid(team.getTeamid());
-                teamDTO.setSubject(team.getSubject());
-                teamDTO.setDiscription(team.getDiscription());
-                teamDTO.setVisibles(team.isVisibles());
-
-                teamArrayList.add(teamDTO);
-            }
-            System.out.println("end");
-
-        }
-        return teamArrayList;*/
-
-     /*   boolean result = teacherRepository.existsById(username);
-        if (!result){
-            return null;
-        }
-*/
-
-
-/*
-        return user.getPassword().equals(password);
-
-
-        List<Team> allTeams = teamRepository.findAll();
-
-
-        ArrayList<TeamDTO> teamDTO2s = new ArrayList<>();
-
-        for (Team team : allTeams) {
-
-            TeamDTO teamDTO = new TeamDTO();
-
-            teamDTO.setTeamid(team.getTeamid());
-            teamDTO.setSubject(team.getSubject());
-            teamDTO.setDiscription(team.getDiscription());
-            teamDTO.setVisibles(team.isVisibles());
-
-            Teacher asdT = team.getTeacher();
-
-            teamDTO.setTeacherUserName(asdT.getName());
-
-
-            teamDTO2s.add(teamDTO);
-
-        }
-
-        return teamDTO2s;*/
     }
 
     @Override
@@ -184,7 +127,7 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public long getTotalTeams() {
-        return 0;
+        return teamRepository.getTotalTeams();
     }
 
 

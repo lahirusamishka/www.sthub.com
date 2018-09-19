@@ -15,43 +15,43 @@ import java.util.ArrayList;
 @CrossOrigin
 @RequestMapping(value = "api/v1/parents")
 public class ParentController {
-
-    private final ParentService parentService;
-
     @Autowired
-    public ParentController(ParentService parentService) {
-        this.parentService = parentService;
-    }
+    private ParentService parentService;
 
-
+    /*parent signin*/
     @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean canAuthenticate(@RequestBody UserDTO userDTO) {
         System.out.println(userDTO);
         return parentService.parentValid(userDTO.getUsername(), userDTO.getPassword());
-
     }
 
+    /*get the all parents*/
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ArrayList<ParentDTO> getAllTeachers(){
+    public ArrayList<ParentDTO> getAllParents() {
         return parentService.getAllParent();
     }
 
-    @GetMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ParentDTO getParent(@PathVariable("id")String parentemail){
+    /*parent search by parent Name*/
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ParentDTO getParent(@PathVariable("id") String parentemail) {
         return parentService.getParent(parentemail);
     }
 
-    @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public  boolean deleteParent(@PathVariable("id")String parentEmail){
+    /*parent delete by parentname*/
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean deleteParent(@PathVariable("id") String parentEmail) {
         return parentService.deleteParent(parentEmail);
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean saveParent(@RequestBody ParentDTO parentDTO){
+    /*parent ragistation*/
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean saveParent(@RequestBody ParentDTO parentDTO) {
         return parentService.saveParent(parentDTO);
     }
 
-    @GetMapping(value = "/count",produces = MediaType.APPLICATION_JSON_VALUE)
-    public long getTotalParent(){
+    /*parent all count*/
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public long getTotalParent() {
         return parentService.getTotalParent();
-    }}
+    }
+}

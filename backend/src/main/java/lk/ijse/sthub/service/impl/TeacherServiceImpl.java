@@ -1,7 +1,6 @@
 package lk.ijse.sthub.service.impl;
 
 
-
 import lk.ijse.sthub.dto.TeacherDTO;
 import lk.ijse.sthub.dto.UserDTO;
 import lk.ijse.sthub.entity.Teacher;
@@ -35,20 +34,20 @@ public class TeacherServiceImpl implements TeacherService {
         ArrayList<TeacherDTO> teacherDTOS = new ArrayList<>();
 
         for (Teacher teacher : allTeachers) {
-            TeacherDTO teacherDTO = new TeacherDTO(
+            if (!teacher.getStatus().equals("delete")) {
+                TeacherDTO teacherDTO = new TeacherDTO(
 
-                    teacher.getName(),
-                    teacher.getAddress(),
-                    teacher.getContact(),
-                    teacher.getEmail(),
-                    teacher.getScode()
-            );
-
-            teacherDTOS.add(teacherDTO);
+                        teacher.getName(),
+                        teacher.getAddress(),
+                        teacher.getContact(),
+                        teacher.getEmail(),
+                        teacher.getScode(),
+                        teacher.getStatus()
+                );
+                teacherDTOS.add(teacherDTO);
+            }
         }
         return teacherDTOS;
-
-
     }
 
     @Override
@@ -60,7 +59,8 @@ public class TeacherServiceImpl implements TeacherService {
                 teacher.getAddress(),
                 teacher.getContact(),
                 teacher.getEmail(),
-                teacher.getScode()
+                teacher.getScode(),
+                teacher.getStatus()
         );
 
     }
@@ -68,22 +68,29 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public boolean deleteTeacher(String teacherEmail) {
-        teacherRepository.deleteById(teacherEmail);
+        Teacher teacher = teacherRepository.findById(teacherEmail).get();
+        teacher.setStatus("delete");
+        teacherRepository.save(teacher);
         return true;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public boolean saveTeacher(TeacherDTO teacherDTO) {
-        Teacher student = new Teacher(
-                teacherDTO.getName(),
-                teacherDTO.getAddress(),
-                teacherDTO.getContact(),
-                teacherDTO.getEmail(),
-                teacherDTO.getScode()
-        );
 
-        teacherRepository.save(student);
+
+        Teacher teacher = new Teacher();
+
+        teacher.setName(teacherDTO.getName());
+        teacher.setEmail(teacherDTO.getEmail());
+        teacher.setAddress(teacherDTO.getAddress());
+        teacher.setContact(teacherDTO.getContact());
+        teacher.setScode(teacherDTO.getScode());
+        teacher.setStatus(teacherDTO.getStatus());
+
+
+
+        teacherRepository.save(teacher);
         return true;
     }
 
@@ -92,7 +99,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 
         boolean teach = teacherRepository.existsById(username);
-        if(!teach){
+        if (!teach) {
 
             return false;
         }
@@ -100,7 +107,6 @@ public class TeacherServiceImpl implements TeacherService {
         Teacher teacher = teacherRepository.findById(username).get();
         return teacher.getScode().equals(password);
     }
-
 
 
     @Override

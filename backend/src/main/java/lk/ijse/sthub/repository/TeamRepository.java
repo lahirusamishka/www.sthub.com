@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public interface TeamRepository extends JpaRepository<Team,Long> {
 
     @Query(value = "SELECT count(tm.id) from Team tm")
-    long getTotalTeachers();
+    long getTotalTeams();
 
     @Query(value = "SELECT * from team",nativeQuery = true)
     ArrayList<Team> getallTems();

@@ -15,92 +15,135 @@
         <li><a routerLink="/main2/dashboard-parent" href="#portfolio">dash</a></li>
 
 
-        <li><a  href=""><i class="fa fa-sign-out" style="font-size:30px" aria-hidden="true"></i></a></li>
+        <li><a (click)="logout()"  href=""><i class="fa fa-sign-out" style="font-size:30px" aria-hidden="true"></i></a></li>
 
       </ul>
     </nav><!-- #nav-menu-container -->
   </div>
 
 </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--body-->
+<div class="container-fluid ">
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container ">
-  <!-- Counters -->
-  <div class="row">
-    <div class="col-sm-6 col-xl-3">
+  <div class="container-fluid text-center col-md">
+    <div class="row content">
 
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <div class="lnr lnr-cart display-4 text-success"></div>
-            <div class="ml-3">
-              <div class="text-muted small">Monthly sales</div>
-              <div class="text-large">2362</div>
+
+      <div class="col-md-2 sidenav small form-control-sm">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a routerLink="admin-dashboard" routerLinkActive="active" class="list-group-item list-group-item-info" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Home page content</a>
+          <a routerLink="manage-parent" routerLinkActive="active" class="list-group-item list-group-item-action" id="list-parents-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Manage Parent</a>
+          <a routerLink="manage-student" routerLinkActive="active" class="list-group-item list-group-item-action" id="list-student-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Manage Student</a>
+          <a routerLink="manage-teacher" routerLinkActive="active" class="list-group-item list-group-item-action" id="list-teacher-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Manage Teacher</a>
+          <a routerLink="manage-team" routerLinkActive="active" class="list-group-item list-group-item-action" id="list-team-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Manage Team</a>
+          <a routerLink="manage-settings" routerLinkActive="active" class="list-group-item list-group-item-action" id="list-setting-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Setting</a>
+
+        </div>
+
+
+      </div>
+      <div class="col-md-8 text-left">
+
+        <div class="container ">
+          <!-- Counters -->
+          <div class="row">
+            <div class="col-sm-6 col-xl-3 ">
+
+              <div class="card mb-4">
+                <div class="card-body shadow-sm">
+                  <div class="d-flex align-items-center">
+                    <div class="lnr lnr-cart display-4 text-success"></div>
+                    <div class="ml-3">
+                      <div class="text-muted small">Teachers</div>
+                      <div class="text-large">{{teacherCount}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-6 col-xl-3">
+
+              <div class="card mb-4">
+                <div class="card-body  shadow-sm">
+                  <div class="d-flex align-items-center">
+                    <div class="lnr lnr-earth display-4 text-info"></div>
+                    <div class="ml-3">
+                      <div class="text-muted small">Parents</div>
+                      <div class="text-large">{{parentCont}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-6 col-xl-3">
+
+              <div class="card mb-4">
+                <div class="card-body  shadow-sm">
+                  <div class="d-flex align-items-center">
+                    <div class="lnr lnr-gift display-4 text-danger"></div>
+                    <div class="ml-3">
+                      <div class="text-muted small">Students</div>
+                      <div class="text-large">{{studentCount}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-6 col-xl-3">
+
+              <div class="card mb-4">
+                <div class="card-body  shadow-sm">
+                  <div class="d-flex align-items-center">
+                    <div class="lnr lnr-users display-4 text-warning"></div>
+                    <div class="ml-3">
+                      <div class="text-muted small">Team</div>
+                      <div class="text-large">{{teamCont}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
+          <!-- / Counters -->
         </div>
+
+        <router-outlet></router-outlet>
+
       </div>
 
-    </div>
-    <div class="col-sm-6 col-xl-3">
 
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <div class="lnr lnr-earth display-4 text-info"></div>
-            <div class="ml-3">
-              <div class="text-muted small">Monthly visits</div>
-              <div class="text-large">687,123</div>
-            </div>
-          </div>
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <!-- <div class="card bg-light mb-3" style="max-width: 18rem;">
+             <div class="card-header">Header</div>
+             <div class="card-body">
+               <h5 class="card-title">Light card title</h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                 content.</p>
+             </div>-->
+        </div>
+        <div class="well">
+          <!--  <p>ADS</p>-->
         </div>
       </div>
-
-    </div>
-    <div class="col-sm-6 col-xl-3">
-
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <div class="lnr lnr-gift display-4 text-danger"></div>
-            <div class="ml-3">
-              <div class="text-muted small">Products</div>
-              <div class="text-large">985</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-6 col-xl-3">
-
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <div class="lnr lnr-users display-4 text-warning"></div>
-            <div class="ml-3">
-              <div class="text-muted small">Users</div>
-              <div class="text-large">105,652</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-  <!-- / Counters -->
+
+
 </div>
 
 
 
 
 
-
--->
-<h1>samishka admin</h1>
-<a (click)="logout()" href="">logout</a>

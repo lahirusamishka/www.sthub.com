@@ -19,5 +19,8 @@ public interface StudentService {
 
     public long getTotalStudent();
 
+
+    public ArrayList<StudentDTO> getAllStudent2(String teacherName);
+
 }
 

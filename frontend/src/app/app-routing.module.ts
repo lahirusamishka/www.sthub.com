@@ -24,6 +24,13 @@ import {Main3Component} from "./view/main3/main3.component";
 import {SettingsComponent} from "./view/main/settings/settings.component";
 import {StudentManageComponent} from "./view/main/student-manage/student-manage.component";
 import {LoginpageComponent} from "./view/loginpage/loginpage.component";
+import {UpdatestudentComponent} from "./view/main/updatestudent/updatestudent.component";
+import {ManageParentComponent} from "./view/main3/manage-parent/manage-parent.component";
+import {ManageSettingsComponent} from "./view/main3/manage-settings/manage-settings.component";
+import {ManageStudentComponent} from "./view/main3/manage-student/manage-student.component";
+import {ManageTeacherComponent} from "./view/main3/manage-teacher/manage-teacher.component";
+import {ManageTeamComponent} from "./view/main3/manage-team/manage-team.component";
+import {RecodebookComponent} from "./view/main/recodebook/recodebook.component";
 
 
 const appRoutes: Routes = [
@@ -38,7 +45,9 @@ const appRoutes: Routes = [
         ]
       },
       {path: "settings", component: SettingsComponent},
-      {path: "student-manage", component: StudentManageComponent}
+      {path: "student-manage", component: StudentManageComponent},
+      {path:"updatestudent",component: UpdatestudentComponent},
+      {path:"recodebook",component:RecodebookComponent}
     ]
   },
   {
@@ -54,7 +63,12 @@ const appRoutes: Routes = [
     component: Main3Component,
     canActivate: [AdminGuard],
     children: [
-      {path: "admin-dashboard", component: AdminDashboardComponent}
+      {path: "admin-dashboard", component: AdminDashboardComponent},
+      {path: "manage-parent",component:ManageParentComponent},
+      {path: "manage-settings",component:ManageSettingsComponent},
+      {path: "manage-student",component:ManageStudentComponent},
+      {path: "manage-teacher",component:ManageTeacherComponent},
+      {path: "manage-team",component:ManageTeamComponent}
     ]
   },
   {
