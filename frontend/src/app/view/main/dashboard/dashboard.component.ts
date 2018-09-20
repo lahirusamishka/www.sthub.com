@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
 export class DashboardComponent implements OnInit {
 
   searchbar:string;
-
+  backbutton:boolean;
   seaechNumber: number;
 
   teacher: Teacher = new Teacher();
@@ -68,6 +68,7 @@ export class DashboardComponent implements OnInit {
 
   claerform(){
 
+    this.backbutton=false;
 
     this.router.navigate(['/main/dashboard']);
   }

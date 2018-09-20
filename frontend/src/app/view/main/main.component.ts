@@ -5,6 +5,7 @@ import {map} from "rxjs/operators";
 import {TeamService} from "../../service/team.service";
 import {Team} from "../../dto/team";
 import {isNumber} from "util";
+import {StudentService} from "../../service/student.service";
 
 export const profiles = "";
 
@@ -16,11 +17,13 @@ export const profiles = "";
 export class MainComponent implements OnInit {
   profiledetails: string;
   teams: Array<Team> = [];
+  numbers:Array<number>=[];
+
   teacher: Teacher = new Teacher();
 
   selectedTeam: Team = new Team();
 
-  constructor(private authservice: AuthService, private teamService: TeamService) {
+  constructor(private authservice: AuthService, private teamService: TeamService,private studentService:StudentService) {
   }
 
   ngOnInit() {
@@ -31,13 +34,26 @@ export class MainComponent implements OnInit {
       })
     )
     this.loadAllTeams(sessionStorage.getItem("scode"));
+    this.loadAllTeamMembers();
 
+  }
+
+  private loadAllTeamMembers() {
   }
 
   loadAllTeams(username: string): void {
     this.teamService.getAllTeam(username).subscribe(
       (result) => {
+
         this.teams = result;
+       /* this.teams.forEach((item, index) => {
+          console.log(item);
+
+        });*/
+
+
+
+
       }
     )
   }
@@ -54,6 +70,7 @@ export class MainComponent implements OnInit {
   logout() {
     this.authservice.logout();
   }
+
 
 
 }

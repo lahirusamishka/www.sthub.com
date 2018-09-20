@@ -31,6 +31,7 @@ import {ManageStudentComponent} from "./view/main3/manage-student/manage-student
 import {ManageTeacherComponent} from "./view/main3/manage-teacher/manage-teacher.component";
 import {ManageTeamComponent} from "./view/main3/manage-team/manage-team.component";
 import {RecodebookComponent} from "./view/main/recodebook/recodebook.component";
+import {ViewstudentComponent} from "./view/main/viewstudent/viewstudent.component";
 
 
 const appRoutes: Routes = [
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
       {path: "settings", component: SettingsComponent},
       {path: "student-manage", component: StudentManageComponent},
       {path:"updatestudent",component: UpdatestudentComponent},
-      {path:"recodebook",component:RecodebookComponent}
+      {path:"recodebook",component:RecodebookComponent},
+      {path:"viewstudent",component:ViewstudentComponent}
     ]
   },
   {

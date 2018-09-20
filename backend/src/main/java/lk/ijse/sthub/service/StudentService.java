@@ -1,8 +1,6 @@
 package lk.ijse.sthub.service;
 
 
-
-
 import lk.ijse.sthub.dto.StudentDTO;
 
 import java.util.ArrayList;
@@ -22,5 +20,7 @@ public interface StudentService {
 
     public ArrayList<StudentDTO> getAllStudent2(String teacherName);
 
+
+    public ArrayList<StudentDTO> getAllStudentByTeamId(Long teanId);
 }
 

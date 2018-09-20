@@ -2,9 +2,6 @@ package lk.ijse.sthub.service.impl;
 
 
 import lk.ijse.sthub.dto.StudentDTO;
-import lk.ijse.sthub.dto.TeacherDTO;
-import lk.ijse.sthub.dto.TeamDTO;
-import lk.ijse.sthub.entity.RecodeBook;
 import lk.ijse.sthub.entity.Student;
 import lk.ijse.sthub.entity.Teacher;
 import lk.ijse.sthub.entity.Team;
@@ -18,7 +15,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 @Service
@@ -173,7 +169,40 @@ public class StudentServiceImpl implements StudentService {
 
             }
         }
-        System.out.println(studentDTOS);
+
+        return studentDTOS;
+
+    }
+
+    @Override
+    public ArrayList<StudentDTO> getAllStudentByTeamId(Long teanId) {
+        ArrayList<Student> students22 = studentRepository.getallTems2();
+
+        ArrayList<StudentDTO> studentDTOS = new ArrayList<>();
+
+        for (Student student : students22) {
+
+            if (teanId.equals(student.getTeam().getTeamid())) {
+                if (!"delete".equals(student.getStatus())) {
+                    Team team = student.getTeam();
+                    StudentDTO studentDTO = new StudentDTO();
+
+                    studentDTO.setStudentname(student.getStudentname());
+                    studentDTO.setEmail(student.getEmail());
+                    studentDTO.setAddress(student.getAddress());
+                    studentDTO.setContact(student.getContact());
+                    studentDTO.setTeachername(team.getTeacher().getName());
+                    studentDTO.setTeamid(team.getTeamid());
+
+
+                    studentDTOS.add(studentDTO);
+
+                }
+
+
+            }
+        }
+
         return studentDTOS;
 
     }

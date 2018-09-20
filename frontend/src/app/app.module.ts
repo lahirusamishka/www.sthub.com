@@ -54,6 +54,9 @@ import {SwalParams, SweetAlert} from "sweetalert/typings/core";
 import {SweetAlertService} from "angular-sweetalert-service";
 import {NgxAlertsService} from "ngx-alerts/lib/ngx-alerts.service";
 import { RecodebookComponent } from './view/main/recodebook/recodebook.component';
+import {RecordsService} from "./service/records.service";
+import { StudentcatogoryComponent } from './view/home/studentcatogory/studentcatogory.component';
+import { ViewstudentComponent } from './view/main/viewstudent/viewstudent.component';
 
 
 @NgModule({
@@ -94,6 +97,8 @@ import { RecodebookComponent } from './view/main/recodebook/recodebook.component
     ManageParentComponent,
     ManageSettingsComponent,
     RecodebookComponent,
+    StudentcatogoryComponent,
+    ViewstudentComponent,
 
   ],
 
@@ -114,7 +119,8 @@ import { RecodebookComponent } from './view/main/recodebook/recodebook.component
     AdminGuard,
     AdminService,
     TeamService,
-    StudentService
+    StudentService,
+    RecordsService
 
   ],
   bootstrap: [AppComponent]

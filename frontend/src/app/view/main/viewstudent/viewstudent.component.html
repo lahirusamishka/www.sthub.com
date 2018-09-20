@@ -1,0 +1,63 @@
+<div class=" card-body shadow p-3 mb-5 bg-light rounded section-bg wow fadeIn  ">
+  <button routerLink="/main/updatestudent" routerLinkActive="active" type="button"  class="btn btn-info shadow p-3 mb-5 btn-sm fa fa-arrow-left "></button> &nbsp;
+  <div class="card-body ">
+
+
+    <form #studentForm="ngForm" >
+      <span class="badge badge-light">All</span>
+      <h4 class="font-weight-bold">Record book Details</h4>
+
+
+      <div class="col">
+
+        <div class="form-group row">
+
+
+          <div class="input-group mb-3">
+
+            <input type="text" name="searchStudent" [(ngModel)]="searcStudentss" class="form-control form-control-sm" placeholder="Search Student Name">
+            <div class="input-group-append">
+              <a (click)="searchStudent()"  >  <span class="input-group-text form-control-sm fa fa-search"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-sm">
+
+          <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Column heading</th>
+            <th scope="col">Column heading</th>
+            <th scope="col">Column heading</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr class="table-light">
+            <th scope="row">Light</th>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">Light</th>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">Light</th>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+
+          </tbody>
+
+      </div>
+
+    </form>
+  </div>
+</div>

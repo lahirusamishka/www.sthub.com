@@ -12,9 +12,15 @@ const URL = '/api/v1/students';
 export class StudentService {
 
   team:Team = new Team();
+  studentName:string;
 
   constructor(private http: HttpClient) {
   }
+
+  getAllStduentByTeamId(teamId:number):Observable<Array<Student>>{
+    return this.http.get<Array<Student>>(MAIN_URL+URL+"/filter/"+teamId);
+  }
+
 
   getAllstudent(): Observable<Array<Student>> {
     return this.http.get<Array<Student>>(MAIN_URL + URL);
@@ -33,6 +39,13 @@ export class StudentService {
   setSearchTeam(team:Team){
     this.team=team;
 
+  }
+  getStudentName(){
+    return this.studentName;
+  }
+
+  setStudentName(studentName:string){
+    this.studentName=studentName;
   }
   getSearchTeam(){
     return this.team;

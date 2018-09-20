@@ -82,9 +82,16 @@ export class UpdatestudentComponent implements OnInit {
     this.studentService.searchStudent(this.searcStudentss).subscribe(
       ((result) => {
 
-        this.newStudet = result;
+        this.selectStudent = result;
       })
     )
+  }
+
+
+  sendStudentName(){
+
+    this.studentService.setStudentName(this.selectStudent.studentname);
+
   }
 
   deleteStudent(student: Student): void {

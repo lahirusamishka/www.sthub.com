@@ -35,7 +35,7 @@
         <div class="col-sm-10">
           <input type="text" required #name="ngModel" pattern=""
                  [class.is-invalid]="name.invalid && name.touched" class="form-control form-control-sm "
-                 name="user" [(ngModel)]="selectStudent.studentname" placeholder="enter student name">
+                 name="textname" [(ngModel)]="selectStudent.studentname" placeholder="enter student name">
           <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid name</small>
         </div>
       </div>
@@ -46,7 +46,7 @@
         <div class="col-sm-10">
           <input type="email" required #email="ngModel" pattern=""
                  [class.is-invalid]="email.invalid && email.touched" class="form-control form-control-sm"
-                 name="email" [(ngModel)]="selectStudent.email" placeholder=" enter email address">
+                 name="textemail" [(ngModel)]="selectStudent.email" placeholder=" enter email address">
           <small class="text-danger" [class.d-none]="email.valid || email.untouched">please enter valid email</small>
         </div>
 
@@ -57,9 +57,9 @@
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><strong>Address</strong></label>
         <div class="col-sm-10">
-          <input type="text" required #address1="ngModel" pattern=""
+          <input type="text" required #address1="ngModel" pattern="" id="textaddress"
                  [class.is-invalid]="address1.invalid && address1.touched" class="form-control form-control-sm"
-                 name="addreasdasdasdsplace" [(ngModel)]="selectStudent.address" placeholder="enter address">
+                 name="textaddress" [(ngModel)]="selectStudent.address" placeholder="enter address">
           <small class="text-danger" [class.d-none]="address1.valid || address1.untouched">please enter valid address
           </small>
         </div>
@@ -79,11 +79,20 @@
           </small>
         </div>
       </div>
+      <br>
+      <br>
 
+      <div class="form row" >
+        <button  routerLink="/main/viewstudent" routerLinkActive="active" type="button"
+                class="btn btn-info shadow p-3 mb-5 btn-sm float-xl-left fa fa-address-card-o "> &nbsp; View <strong>{{selectStudent.studentname}}</strong>  RecordBook
+        </button> &nbsp;
 
-      <div class="form">
+        <button (click)="sendStudentName()" routerLink="/main/recodebook" routerLinkActive="active" type="button" [disabled]="studentForm.invalid"
+                class="btn btn-info shadow p-3 mb-5 btn-sm float-xl-left fa fa-plus "> &nbsp; Add New Record &nbsp;<strong>{{selectStudent.studentname}}</strong>
+        </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <button type="submit" [disabled]="studentForm.invalid"
-                class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-get-pocket"> &nbsp; Add
+                class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-get-pocket"> &nbsp; Upadte
         </button> &nbsp;
       </div>
       <br>

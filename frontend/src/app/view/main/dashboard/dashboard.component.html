@@ -72,9 +72,9 @@
     </div>
     <button type="submit" class="btn btn-success shadow p-3 mb-5 btn-sm ">Save Team</button> &nbsp;
 
-    <button type="button" routerLink="student-manage" routerLinkActive="active" [disabled]="!selectedTeam.teamid" class="btn btn-info shadow p-3 mb-5 btn-sm  ">Add New Team Member</button> &nbsp;
+    <button type="button" routerLink="student-manage" (click)="backbutton=true" routerLinkActive="active" [disabled]="!selectedTeam.teamid" class="btn btn-info shadow p-3 mb-5 btn-sm  ">Add New Team Member</button> &nbsp;
 
-    <button type="button" (click)="claerform()" class="btn btn-warning shadow p-3 mb-5 btn-sm ">Refresh</button> &nbsp;
+    <button type="button" (click)="claerform()" [hidden]="!backbutton" class="btn btn-info shadow p-3 mb-5 btn-sm fa fa-arrow-left "></button> &nbsp;
 
 
 

@@ -1,5 +1,142 @@
 <div class=" card-body shadow p-3 mb-5 bg-light rounded section-bg wow fadeIn  ">
+
   <div class="card-body ">
+
+    <form class="form-inline float-right mt-3 ">
+
+      <input class="form-control form-control-sm " [(ngModel)]="seaechNumber" name="textNumber" type="search"
+             placeholder="Search" aria-label="Search">
+
+
+      <button class="btn btn-outline-success my-2 my-sm-0 form-control-sm fa fa-search" [(ngModel)]="searchbar" (click)="searchTeam()" type="submit"></button>
+
+
+    </form>
+    <span class="badge badge-info">Info</span>
+    <h4 class="font-weight-bold">Record Book Page</h4>
+    <form #frmRecordBook="ngForm" (ngSubmit)="saveRecordBook()">
+
+
+      <div class="card-body">
+
+        <table class="table table-hover table-sm">
+          <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Test Discription</th>
+            <th scope="col">marks</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="table-dark">
+            <th scope="row">Dark</th>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+
+
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label col-form-label-sm"><strong>Student Name</strong></label>
+        <div class="col-sm-10">
+          <!--^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$-->
+          <input type="text" required #name="ngModel" pattern=""
+                 [class.is-invalid]="name.invalid && name.touched" class="form-control form-control-sm "
+                 name="texSt" [(ngModel)]="selectedRecord.studentName" placeholder="enter student name">
+          <small class="text-danger" [class.d-none]="name.valid || name.untouched"></small>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label col-form-label-sm"><strong>Select type</strong></label>
+        <div class="col-sm-10">
+
+          <select name="typeofexams" [(ngModel)]="examType" class="custom-select custom-select-sm " id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="Viva">Viva</option>
+            <option value="Exam">Exam</option>
+            <option value="class practical">class practical</option>
+            <option value="test">test</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label col-form-label-sm"><strong>other Discription</strong></label>
+        <div class="col-sm-10">
+          <!--^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$-->
+          <input type="text"  #discription="ngModel" pattern=""
+                 [class.is-invalid]="discription.invalid && discription.touched" class="form-control form-control-sm "
+                 name="texStud" [(ngModel)]="selectedRecord.teatName" placeholder="other discription">
+
+        </div>
+      </div>
+
+
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label col-form-label-sm"><strong>Select marks range</strong></label>
+        <div class="col-sm-10">
+
+          <select  name="markstypes" [(ngModel)]="marksRange" class="custom-select custom-select-sm " id="inputGroupSel">
+            <option selected>Choose...</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="400">400</option>
+            <option value="1000">1000</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label col-form-label-sm"><strong>Exam Marks</strong></label>
+        <div class="col-sm-10">
+          <!--^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$-->
+          <input type="numberasds" required #marks="ngModel" pattern=""
+                 [class.is-invalid]="marks.invalid && marks.touched" class="form-control form-control-sm "
+                 name="texStudentNa" [(ngModel)]="selectedRecord.marks" placeholder="enter marks">
+          <small class="text-danger" [class.d-none]="marks.valid || marks.untouched"></small>
+        </div>
+      </div>
+
+
+      <div class="form-group row ">
+
+        <div class="col-sm-4 row">
+          <button type="button"
+                  class="btn btn-info shadow p-3 mb-5 btn-sm float-xl-left fa fa-arrow-left "> &nbsp;
+          </button> &nbsp;
+          <button type="button"
+                  class="btn btn-info shadow p-3 mb-5 btn-sm float-xl-left fa fa-arrow-right "> &nbsp;
+          </button> &nbsp;
+        </div>
+
+        <div class="col-sm-4">
+
+
+        </div>
+
+        <div class="col-sm-4">
+
+          <button type="submit"
+                  class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-hdd-o "> save Record
+          </button>
+        </div>
+      </div>
+
+      <div [hidden]="!alert3" class="alert alert-dismissible alert-success wow fadeInDown">
+        <button (click)="hiddin()"    type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Well done!</strong> You successfully Added <a  class="alert-link"></a>.
+      </div>
+
+    </form>
+
 
   </div>
 </div>

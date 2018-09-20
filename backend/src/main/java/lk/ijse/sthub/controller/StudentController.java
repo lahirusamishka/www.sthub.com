@@ -4,6 +4,7 @@ package lk.ijse.sthub.controller;
 import lk.ijse.sthub.dto.StudentDTO;
 import lk.ijse.sthub.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,12 @@ public class StudentController {
     @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
+    }
+
+
+    @GetMapping(value = "/filter/{teamId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<StudentDTO> getAllStudentByTemaId(@PathVariable("teamId")Long teanId){
+          return studentService.getAllStudentByTeamId(teanId);
     }
 
 
