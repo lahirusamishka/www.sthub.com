@@ -57,10 +57,11 @@ export class DashboardComponent implements OnInit {
     this.teamService.saveTeam(this.selectedTeam).subscribe(
       (result) => {
         if (result) {
-          swal("We couldn't find anything for " );
+          swal("Team saved successfully" );
+
           this.loadAllTeams(sessionStorage.getItem("scode"));
         } else {
-          swal("We couldn't find anything for ");
+          swal("Failed to save the Team");
         }
       }
     )
@@ -97,13 +98,13 @@ export class DashboardComponent implements OnInit {
 
 
   deleteTeam(team: Team): void {
-    if (confirm("Are you sure you want to delete this customer?")) {
+    if (confirm("Are you sure you want to delete this Team?")) {
       this.teamService.deleteTeam(team.teamid).subscribe(
         (result) => {
           if (result) {
-            alert("Customer has been deleted successfully");
+            swal("Team has been deleted successfully");
           } else {
-            alert("Failed to delete the customer");
+            swal("Failed to delete the Team");
           }
           this.loadAllTeams(sessionStorage.getItem("scode"));
 

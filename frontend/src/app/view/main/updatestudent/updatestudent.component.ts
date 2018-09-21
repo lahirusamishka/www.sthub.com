@@ -56,7 +56,12 @@ export class UpdatestudentComponent implements OnInit {
 
     this.studentService.saveStudent(this.selectStudent).subscribe(
       ((result) => {
-        alert("saves");
+        if (result){
+          swal("Team student Update successfully");
+        }else {
+          swal("Team student Update fail");
+        }
+
       })
     )
 
@@ -98,14 +103,24 @@ export class UpdatestudentComponent implements OnInit {
   }
 
   deleteStudent(student: Student): void {
+    if (confirm("Are you sure you want to delete this Team?")) {
+      this.studentService.deleteStudent(student.studentname).subscribe(
+        ((result) => {
 
-    this.studentService.deleteStudent(student.studentname).subscribe(
-      ((result) => {
-        alert("Student Deleted");
-        this.loadAllStudent(sessionStorage.getItem("scode"));
-      })
-    )
+          if (result) {
 
+
+            swal("Team student delete successfully");
+            this.selectStudent = null;
+            this.loadAllStudent(sessionStorage.getItem("scode"));
+          } else {
+            swal("Failed to delete the student");
+          }
+
+
+        })
+      )
+    }
 
   }
 }

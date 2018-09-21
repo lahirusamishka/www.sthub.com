@@ -138,7 +138,7 @@
 
         <div class="col-sm-4">
 
-          <button  [disabled]="recordForm.invalid" type="submit"
+          <button (click)="saveRecordBook()" [disabled]="recordForm.invalid" type="submit"
                   class="btn btn-success shadow p-3 mb-5 btn-sm float-xl-right fa fa-hdd-o "> save Record
           </button>
         </div>

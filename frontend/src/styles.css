@@ -231,12 +231,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   margin: 10px;
   color: #fff;
-  background: #18d26e;
+  background: #3e9cd2;
 }
 
 #intro .btn-get-started:hover {
   background: #fff;
-  color: #18d26e;
+  color: #3e9cd2;
 }
 
 /*--------------------------------------------------------------

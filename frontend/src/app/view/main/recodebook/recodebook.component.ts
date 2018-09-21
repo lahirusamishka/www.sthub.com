@@ -4,8 +4,6 @@ import {Records} from "../../../dto/records";
 import {NgForm} from "@angular/forms";
 import {StudentService} from "../../../service/student.service";
 import {Student} from "../../../dto/student";
-import {concat} from "rxjs";
-import {concatAll} from "rxjs/operators";
 
 @Component({
   selector: 'app-recodebook',
@@ -87,23 +85,14 @@ export class RecodebookComponent implements OnInit {
 
 
   saveRecordBook() {
-    String("asfasfas"+"asfasf");
-
-   // alert(this.studentServioce.getStudentName()+this.examType);
-    concat(this.studentServioce.getStudentName(),this.examType).subscribe(
-      ((result)=>{
-        alert(result);
-        /*this.selectedRecord.teatName=result;*/
-      })
-    )
 
 
-    /*this.recrordBookService.saveRecords(this.selectedRecord).subscribe(
+    this.recrordBookService.saveRecords(this.selectedRecord).subscribe(
       ((result) => {
 
         this.alert3 = result;
       })
-    )*/
+    )
   }
 
   hiddin() {

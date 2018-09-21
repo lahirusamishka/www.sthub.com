@@ -8,48 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="349fd118-2711-48de-afb7-fb1661207fbf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/controller/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/TeamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/controller/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/controller/TeamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/TeamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/TeamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/StudentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/TeamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/TeamServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/controller/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/controller/TeamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/TeamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/TeamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/StudentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/TeamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/TeamServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/parent.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/parent.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/records.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/records.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/student.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/student.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/team.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/team.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/sthub-1.0.0/WEB-INF/classes/lk/ijse/sthub/service/impl/AllRecordsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/main.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/dashboard-parent/dashboard-parent.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,8 +61,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="39" />
-          <entry key="html" value="194" />
+          <entry key="css" value="40" />
+          <entry key="html" value="197" />
           <entry key="java" value="292" />
           <entry key="jpg" value="7" />
           <entry key="js" value="2" />
@@ -102,21 +70,21 @@
           <entry key="png" value="1" />
           <entry key="properties" value="7" />
           <entry key="rnc" value="1" />
-          <entry key="ts" value="247" />
+          <entry key="ts" value="249" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="39" />
-          <entry key="HTML" value="194" />
+          <entry key="CSS" value="40" />
+          <entry key="HTML" value="197" />
           <entry key="Image" value="8" />
           <entry key="JAVA" value="292" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="2" />
           <entry key="Properties" value="7" />
           <entry key="RNG Compact" value="1" />
-          <entry key="TypeScript" value="247" />
+          <entry key="TypeScript" value="249" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -124,24 +92,24 @@
         <counts>
           <entry key="css" value="272" />
           <entry key="dummy" value="18" />
-          <entry key="html" value="7700" />
+          <entry key="html" value="7714" />
           <entry key="java" value="5809" />
           <entry key="json" value="36" />
           <entry key="properties" value="38" />
-          <entry key="ts" value="8525" />
+          <entry key="ts" value="8689" />
           <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="272" />
-          <entry key="HTML" value="7698" />
+          <entry key="HTML" value="7712" />
           <entry key="JAVA" value="5809" />
           <entry key="JSON" value="36" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Properties" value="38" />
-          <entry key="TypeScript" value="8525" />
+          <entry key="TypeScript" value="8689" />
           <entry key="XML" value="6" />
         </counts>
       </usages-collector>
@@ -155,19 +123,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+            <state relative-caret-position="259">
+              <caret line="92" column="29" lean-forward="true" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -176,19 +135,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/dto/records.ts">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="394">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="122" column="35" lean-forward="true" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
+            <state relative-caret-position="476">
+              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/home/home.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -196,7 +185,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="287">
               <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -206,40 +195,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-              <folding>
-                <element signature="e#3385#3392#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/main.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="449">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -248,10 +207,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="82" column="91" selection-start-line="82" selection-start-column="91" selection-end-line="82" selection-end-column="91" />
+              <folding>
+                <element signature="e#3385#3392#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="51">
+              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -275,6 +246,7 @@
       <find>gets</find>
       <find>set</find>
       <find>searcStudentss</find>
+      <find>btn-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -283,8 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/home/studentcatogory/studentcatogory.component.html" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/home/ourcourses/ourcourses.component.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/entity/RecordBook.java" />
         <option value="$PROJECT_DIR$/src/main/java/lk/ijse/sthub/repository/RecordBookRepository.java" />
@@ -319,21 +289,23 @@
         <option value="$PROJECT_DIR$/../frontend/src/app/dto/allrecords.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/service/records.service.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.html" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.ts" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main2/main2.component.ts" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/service/auth.service.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.ts" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/main.component.html" />
         <option value="$PROJECT_DIR$/../frontend/src/app/dto/records.ts" />
-        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts" />
         <option value="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/home/home.component.html" />
+        <option value="$PROJECT_DIR$/../frontend/src/styles.css" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html" />
       </list>
     </option>
   </component>
@@ -553,6 +525,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -669,7 +649,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537555295493" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537561739014" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -814,12 +794,12 @@
       <workItem from="1537413181376" duration="23366000" />
       <workItem from="1537447658758" duration="18305000" />
       <workItem from="1537504930357" duration="13633000" />
-      <workItem from="1537526211948" duration="21828000" />
+      <workItem from="1537526211948" duration="26071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312623000" />
+    <option name="totallyTimeSpent" value="316866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -836,7 +816,7 @@
       <window_info id="npm" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32890365" />
       <window_info anchor="bottom" id="TypeScript" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.19269103" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.19269103" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50061125" side_tool="true" weight="0.2912514" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32890365" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" />
@@ -845,7 +825,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32890365" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.30232558" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49938875" weight="0.2912514" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49938875" visible="true" weight="0.26135105" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -858,7 +838,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.02200489" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.025672372" />
       <window_info anchor="right" id="Database" order="9" weight="0.3294621" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.3294621" />
       <window_info anchor="right" id="CDI" order="11" weight="0.3294621" />
@@ -875,20 +855,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/lk/ijse/sthub/service/impl/TeamServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lk/ijse/sthub/controller/TeamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lk/ijse/sthub/dto/TeamMemberCountDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1086,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../frontend/src/app/service/records.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -1107,16 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,23 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/viewstudent/viewstudent.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1261,19 +1193,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts">
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="394">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="287">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -1281,20 +1210,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="92" column="29" lean-forward="true" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/dashboard/dashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/student-manage/student-manage.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="361">
+          <caret line="82" column="91" selection-start-line="82" selection-start-column="91" selection-end-line="82" selection-end-column="91" />
           <folding>
             <element signature="e#3385#3392#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/recodebook/recodebook.component.html">
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="122" column="35" lean-forward="true" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
+        <state relative-caret-position="51">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main/updatestudent/updatestudent.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../frontend/src/app/view/main3/main3.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
         </state>
       </provider>
     </entry>
