@@ -48,7 +48,7 @@ export class ParentService {
     return this.http.delete<boolean>(MAIN_URL + URL + "/" + parentNme);
   }
 
-  searchTeacher(username :String): Observable<Parent>{
+  searchParent(username :String): Observable<Parent>{
     return this.http.get<Parent>(MAIN_URL + URL + "/"+username);
   }
 

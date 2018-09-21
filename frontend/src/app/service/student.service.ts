@@ -11,13 +11,16 @@ const URL = '/api/v1/students';
 @Injectable()
 export class StudentService {
 
+
   team:Team = new Team();
   studentName:string;
+  teamIds:number;
 
   constructor(private http: HttpClient) {
   }
 
   getAllStduentByTeamId(teamId:number):Observable<Array<Student>>{
+
     return this.http.get<Array<Student>>(MAIN_URL+URL+"/filter/"+teamId);
   }
 
@@ -35,7 +38,14 @@ export class StudentService {
     return this.http.get<Array<Student>>(MAIN_URL + URL + "/student2/" + teachername);
   }
 
+  setTeamIds(teamno:number){
+    this.teamIds=teamno;
+  }
 
+
+  getTeamIds(){
+    return  this.teamIds;
+  }
   setSearchTeam(team:Team){
     this.team=team;
 
@@ -57,6 +67,7 @@ export class StudentService {
   saveStudent(student: Student): Observable<boolean> {
 
     return this.http.post<boolean>(MAIN_URL + URL, student);
+
   }
 
   getTotalStudent(): Observable<number> {
@@ -66,4 +77,5 @@ export class StudentService {
   searchStudent(studentName: String): Observable<Student> {
     return this.http.get<Student>(MAIN_URL + URL + "/" + studentName);
   }
+
 }

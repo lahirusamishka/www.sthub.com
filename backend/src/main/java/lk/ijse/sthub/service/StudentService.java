@@ -22,5 +22,7 @@ public interface StudentService {
 
 
     public ArrayList<StudentDTO> getAllStudentByTeamId(Long teanId);
+
+
 }
 

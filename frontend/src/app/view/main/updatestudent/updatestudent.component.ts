@@ -64,6 +64,7 @@ export class UpdatestudentComponent implements OnInit {
 
   selectStudents(student: Student): void {
 
+
     this.selectStudent = student;
     this.tempTeam = Object.assign({}, student);
     this.manuallySelected = true;
@@ -82,28 +83,28 @@ export class UpdatestudentComponent implements OnInit {
     this.studentService.searchStudent(this.searcStudentss).subscribe(
       ((result) => {
 
+
         this.selectStudent = result;
       })
     )
   }
 
 
-  sendStudentName(){
+  sendStudentName() {
 
     this.studentService.setStudentName(this.selectStudent.studentname);
+    this.studentService.setTeamIds(this.selectStudent.teamid);
 
   }
 
   deleteStudent(student: Student): void {
 
     this.studentService.deleteStudent(student.studentname).subscribe(
-      ((result)=>{
+      ((result) => {
         alert("Student Deleted");
         this.loadAllStudent(sessionStorage.getItem("scode"));
       })
     )
-
-
 
 
   }

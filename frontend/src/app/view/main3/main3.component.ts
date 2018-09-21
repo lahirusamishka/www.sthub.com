@@ -38,7 +38,7 @@ export class Main3Component implements OnInit {
       })
     )
 
-    this.teacherSerivice.getTotalTeachers().subscribe(
+    this.studentService.getTotalStudent().subscribe(
       ((result) => {
         this.studentCount = result;
       })

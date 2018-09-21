@@ -15,9 +15,9 @@
 
           <div class="input-group mb-3">
 
-            <input type="text" name="searchStudent" [(ngModel)]="searcStudentss" class="form-control form-control-sm" placeholder="Search Student Name">
+            <input type="text"  [(ngModel)]="studentName" name="searchStudentName"  class="form-control form-control-sm" placeholder="Search Student Name">
             <div class="input-group-append">
-              <a (click)="searchStudent()"  >  <span class="input-group-text form-control-sm fa fa-search"></span></a>
+              <a (click)="seacherStduent()" >  <span class="input-group-text form-control-sm fa fa-search"></span></a>
             </div>
           </div>
         </div>
@@ -25,36 +25,36 @@
 
       <div class="table-sm">
 
+
+        <table id="tblStudent" class="table table-hover table-sm">
           <thead>
           <tr>
-            <th scope="col">Type</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
+
+            <th scope="col"> Date</th>
+            <th scope="col"> Discription</th>
+            <th scope="col">Marks</th>
+
+
           </tr>
           </thead>
           <tbody>
+          <tr *ngFor="let records of allrecords | paginate: { itemsPerPage: 10, currentPage: p } "
+              class="table-light  "  (click)="selectRecord(records)" [class.selected]="records==selectedStudenRecord" >
 
-          <tr class="table-light">
-            <th scope="row">Light</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-light">
-            <th scope="row">Light</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="table-light">
-            <th scope="row">Light</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
+            <td>{{records.date}}</td>
+            <td>{{records.teatName}}</td>
+            <td>{{records.marks}}</td>
 
+          </tr>
           </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="4">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
 
       </div>
 

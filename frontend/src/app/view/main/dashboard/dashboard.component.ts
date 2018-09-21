@@ -57,10 +57,10 @@ export class DashboardComponent implements OnInit {
     this.teamService.saveTeam(this.selectedTeam).subscribe(
       (result) => {
         if (result) {
-          alert("saved successfully");
+          swal("We couldn't find anything for " );
           this.loadAllTeams(sessionStorage.getItem("scode"));
         } else {
-          alert("Failed to save");
+          swal("We couldn't find anything for ");
         }
       }
     )
@@ -85,6 +85,7 @@ export class DashboardComponent implements OnInit {
   selectTeam(team: Team): void {
     // this.clear();
   /*  this.searchTeam();*/
+    this.studentService.setSearchTeam(this.selectedTeam);
     this.selectedTeam = team;
     this.tempTeam = Object.assign({}, team);
     this.manuallySelected = true;

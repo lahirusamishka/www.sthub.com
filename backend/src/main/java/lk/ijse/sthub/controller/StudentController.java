@@ -30,6 +30,9 @@ public class StudentController {
     }
 
 
+
+
+
     @GetMapping(value = "/all",produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<StudentDTO> getAllCustomer() {
         System.out.println("get all normal");

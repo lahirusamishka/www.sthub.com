@@ -58,7 +58,7 @@
     </div>
     <div class="form-group">
 
-
+<!--
       <div class="form-check">
         <input class="form-check-input " name="private" [(ngModel)]="selectedTeam.visibles" type="checkbox" value=""
                id="invalidCheck3" >
@@ -66,7 +66,7 @@
           private group
         </label>
 
-      </div>
+      </div>-->
 
 
     </div>
@@ -93,7 +93,7 @@
         <th> ID</th>
         <th> Subject</th>
         <th> Discription</th>
-        <th> Visibility</th>
+       <!-- <th> Visibility</th>-->
         <th></th>
       </tr>
       </thead>
@@ -104,7 +104,7 @@
         <td>{{team.teamid}}</td>
         <td>{{team.subject}}</td>
         <td>{{team.discription}}</td>
-        <td>{{team.visibles}}</td>
+      <!--  <td>{{}}</td>-->  <!--team.visibles-->
         <td>
           <i (click)="deleteTeam(team)" class="deletebutton fa fa-trash-o fa-2x"></i>
         </td>

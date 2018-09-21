@@ -1,3 +1,77 @@
-<p>
-  dashboard-parent works!
-</p>
+<div class=" card-body shadow p-3 mb-5 bg-light rounded section-bg wow fadeIn  ">
+  <div class="card-body ">
+
+    <span class="badge badge-info">Info</span>
+    <h4 class="font-weight-bold">Settings Page</h4>
+
+
+
+    <form #frmTeacher="ngForm" (submit)="SignUpTeacher()">
+      <div class="col-sm">
+
+
+        <div class="form-group  ">
+          <input type="text" required #name="ngModel" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$"
+                 [class.is-invalid]="name.invalid && name.touched" class="form-control form-control-sm "
+                 name="user" [(ngModel)]="teacher.name" placeholder="enter username">
+          <small class="text-danger" [class.d-none]="name.valid || name.untouched">please enter valid username</small>
+
+        </div>
+
+        <div class="form-group  ">
+          <input type="email" required #email="ngModel" pattern=""
+                 [class.is-invalid]="email.invalid && email.touched" class="form-control form-control-sm "
+                 name="email" [(ngModel)]="teacher.contact" placeholder=" enter  address">
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">please enter valid address</small>
+        </div>
+
+        <!--  [0-9]{10}-->
+        <div class="form-group  ">
+          <input type="text" required #address1="ngModel" pattern=""
+                 [class.is-invalid]="address1.invalid && address1.touched" class="form-control form-control-sm"
+                 name="addreasdasdasdsplace" [(ngModel)]="teacher.email" placeholder="enter contact">
+          <small class="text-danger" [class.d-none]="address1.valid || address1.untouched">please enter valid contact</small>
+
+        </div>
+        <!--  [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$-->
+        <div class="form-group  ">
+          <input type="text" required #number="ngModel" pattern=""
+                 [class.is-invalid]="number.invalid && number.touched" class="form-control form-control-sm"
+                 name="number" [(ngModel)]="teacher.address" placeholder="enter email">
+          <small class="text-danger" [class.d-none]="number.valid || number.untouched">please enter valid Email</small>
+
+        </div>
+
+        <div class="form-group  ">
+          <input type="password" required #passcode="ngModel"
+                 pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+                 [class.is-invalid]="passcode.invalid && passcode.touched" class="form-control form-control-sm"
+                 name="sdfsddff" [(ngModel)]="teacher.scode" placeholder="new password">
+          <small class="text-danger" [class.d-none]="passcode.valid || passcode.untouched">password must contain at least 8
+            characters, including UPPER/lowercase and number
+          </small>
+
+        </div>
+
+
+
+        <div class="form-group  ">
+          <div class="form-group">
+            <label for="exampleInputFile">Upload Profile Picture</label>
+            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            <small id="fileHelp" class="form-text text-muted">  </small>
+          </div>
+        </div>
+
+        <div class="form-group col col-md-12  ">
+
+          <button type="submit" class="btn float-xl-right" [disabled]="frmTeacher.invalid"><span>Confirm</span></button>
+          <br>
+          <br>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

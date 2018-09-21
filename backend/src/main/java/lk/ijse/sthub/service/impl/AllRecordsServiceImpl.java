@@ -77,7 +77,6 @@ public class AllRecordsServiceImpl implements AllRecordsService {
 
             if (studentName.equals(allRecords.getStudentName())) {
 
-                System.out.println("awa");
                 AllRecordsDTO allRecordsDTO = new AllRecordsDTO();
 
                 allRecordsDTO.setARId(allRecords.getARId());

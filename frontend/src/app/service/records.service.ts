@@ -3,8 +3,10 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {MAIN_URL} from "./team.service";
 import {Records} from "../dto/records";
+import {Allrecords} from "../dto/allrecords";
 
 const URL = '/api/v1/records';
+const URL2='/api/v1/allrecords/all/'
 @Injectable()
 export class RecordsService {
 
@@ -14,6 +16,12 @@ export class RecordsService {
 
   getAllRecords(): Observable<Array<Records>>{
     return this.http.get<Array<Records>>(MAIN_URL + URL);
+
+  }
+
+  getAllRecords2(studentName: string): Observable<Array<Allrecords>>{
+
+    return this.http.get<Array<Allrecords>>(MAIN_URL + URL2+studentName);
 
   }
 
@@ -32,6 +40,7 @@ export class RecordsService {
   searchRecords(studentName :String): Observable<Records>{
     return this.http.get<Records>(MAIN_URL + URL + "/"+studentName);
   }
+
 
 
 }

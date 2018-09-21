@@ -38,6 +38,7 @@ export class StudentManageComponent implements OnInit {
   }
 
 
+
   closeAlert(){
     this.savedmsg=false;
   }

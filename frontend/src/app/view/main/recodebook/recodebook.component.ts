@@ -3,6 +3,9 @@ import {RecordsService} from "../../../service/records.service";
 import {Records} from "../../../dto/records";
 import {NgForm} from "@angular/forms";
 import {StudentService} from "../../../service/student.service";
+import {Student} from "../../../dto/student";
+import {concat} from "rxjs";
+import {concatAll} from "rxjs/operators";
 
 @Component({
   selector: 'app-recodebook',
@@ -13,14 +16,29 @@ export class RecodebookComponent implements OnInit {
 
   examType: string;
   marksRange: string;
-
+  tempTeam: Student = null;
   searchbar;
   alert3: boolean=false;
   seaechNumber: number;
   stdeuntName: String;
+  teamid:number;
+
+
 
   records: Array<Records> = [];
+
+  studentsbyTeam:Array<Student> =[];
+
+  student:Student     = new Student();
+
   selectedRecord: Records = new Records();
+
+
+
+
+
+
+
   @ViewChild("frmRecordBook") frmRecordBook: NgForm;
   tempRecord: Records = null;
   manuallySelected: boolean = false;
@@ -38,16 +56,54 @@ export class RecodebookComponent implements OnInit {
 
     this.selectedRecord.studentName = this.studentServioce.getStudentName();
 
+
+    this.teamid=this.studentServioce.getTeamIds();
+
+    this.lordAllStduentByeTeamId(this.teamid);
+
   }
 
-  saveRecordBook() {
+  selectStudents(student: Student): void {
 
-    this.recrordBookService.saveRecords(this.selectedRecord).subscribe(
+    this.selectedRecord.studentName=student.studentname;
+
+    this.student = student;
+    this.tempTeam = Object.assign({}, student);
+    this.manuallySelected = true;
+  }
+
+
+  private lordAllStduentByeTeamId(teamId:number) {
+
+    this.studentServioce.getAllStduentByTeamId(teamId).subscribe(
+      ((result)=>{
+
+
+        this.studentsbyTeam=result;
+
+      })
+    )
+  }
+
+
+  saveRecordBook() {
+    String("asfasfas"+"asfasf");
+
+   // alert(this.studentServioce.getStudentName()+this.examType);
+    concat(this.studentServioce.getStudentName(),this.examType).subscribe(
+      ((result)=>{
+        alert(result);
+        /*this.selectedRecord.teatName=result;*/
+      })
+    )
+
+
+    /*this.recrordBookService.saveRecords(this.selectedRecord).subscribe(
       ((result) => {
 
         this.alert3 = result;
       })
-    )
+    )*/
   }
 
   hiddin() {
@@ -57,5 +113,6 @@ export class RecodebookComponent implements OnInit {
   searchTeam() {
 
   }
+
 
 }

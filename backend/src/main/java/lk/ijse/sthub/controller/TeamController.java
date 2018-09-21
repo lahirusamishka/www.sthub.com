@@ -3,6 +3,7 @@ package lk.ijse.sthub.controller;
 
 import lk.ijse.sthub.dto.TeamDTO;
 import lk.ijse.sthub.dto.TeamDTO2;
+import lk.ijse.sthub.dto.TeamMemberCountDTO;
 import lk.ijse.sthub.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -25,6 +26,13 @@ public class TeamController {
 
         return teamService.saveTeam(teamDTO);
     }
+
+
+    @GetMapping(value = "/filterCount/{username}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<TeamMemberCountDTO> getAllStudentCountOnTeam(@PathVariable("username")String username){
+        return teamService.getAllStudentCountOnTeam(username);
+    }
+
 
     @GetMapping(value = "/all/{username}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<TeamDTO> getAllTeams(@PathVariable("username")String username) {

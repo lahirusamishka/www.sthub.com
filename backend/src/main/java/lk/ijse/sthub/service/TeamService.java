@@ -3,6 +3,7 @@ package lk.ijse.sthub.service;
 
 import lk.ijse.sthub.dto.TeamDTO;
 import lk.ijse.sthub.dto.TeamDTO2;
+import lk.ijse.sthub.dto.TeamMemberCountDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,4 +24,6 @@ public interface TeamService {
     public boolean saveTeam(TeamDTO teamDTO);
 
     public long getTotalTeams();
+
+    public ArrayList<TeamMemberCountDTO> getAllStudentCountOnTeam(String username);
 }
