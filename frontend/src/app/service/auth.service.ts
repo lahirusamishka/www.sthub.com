@@ -8,8 +8,8 @@ import {Teacher} from "../dto/teacher";
 
 export const MAIN_URL= "http://localhost:8080";
 const URL = '/api/v1/teachers';
-const URL2= '/api/v1/teachers/login'
-
+const URL2= '/api/v1/teachers/login';
+const ImageURL='/api/v1/teachers/profileimg';
 @Injectable()
 export class AuthService {
 
@@ -34,6 +34,7 @@ export class AuthService {
         })
       )
   }
+
 
   saveTeacher(teacher: Teacher): Observable<boolean>{
     return this.http.post<boolean>(MAIN_URL + URL,teacher);

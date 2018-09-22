@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StudentService} from "../../../service/student.service";
 import {Allrecords} from "../../../dto/allrecords";
 import {ParentService} from "../../../service/parent.service";
@@ -21,10 +21,11 @@ export class ViewstudentComponent implements OnInit {
   allrecords: Array<Allrecords> = [];
 
 
-  constructor(private parentService: ParentService, private recordServicse: RecordsService,private studentService:StudentService) {
+  constructor(private parentService: ParentService, private recordServicse: RecordsService, private studentService: StudentService) {
   }
 
   ngOnInit() {
+    this.studentName = this.studentService.getStudentName();
 
     this.recordServicse.getAllRecords2(this.studentService.getStudentName()).subscribe(
       ((result) => {
@@ -36,9 +37,6 @@ export class ViewstudentComponent implements OnInit {
 
   logout() {
     this.parentService.logout();
-
-
-
 
 
   }
@@ -57,7 +55,6 @@ export class ViewstudentComponent implements OnInit {
   selectRecord(records) {
     this.selectedStudenRecord = records;
   }
-
 
 
 }

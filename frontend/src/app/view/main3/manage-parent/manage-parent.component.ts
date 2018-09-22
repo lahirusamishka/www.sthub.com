@@ -57,7 +57,7 @@ export class ManageParentComponent implements OnInit {
   searchParent() {
 
 
-    this.parentservice.searchTeacher(this.searchParents.name).subscribe(
+    this.parentservice.searchParent(this.searchParents.name).subscribe(
       ((result) => {
         this.parent = result;
       })

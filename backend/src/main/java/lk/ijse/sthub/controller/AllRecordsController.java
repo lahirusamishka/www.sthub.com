@@ -14,14 +14,19 @@ import java.util.ArrayList;
 @RequestMapping(value = "api/v1/allrecords")
 public class AllRecordsController {
 
-
     @Autowired
     private AllRecordsService allRecordsService;
+
+
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<AllRecordsDTO> getAllRecodes() {
         return allRecordsService.getAllRecods2();
     }
+
+
+
+
 
     @GetMapping(value = "/all/{studentname}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<AllRecordsDTO> getAllRecodes(@PathVariable("studentname") String studentName) {

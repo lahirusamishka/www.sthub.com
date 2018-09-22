@@ -31,6 +31,8 @@ public class Student {
         this.status = status;
     }
 
+
+
     public String getStudentname() {
         return studentname;
     }
@@ -99,4 +101,5 @@ public class Student {
                 ", status='" + status + '\'' +
                 '}';
     }
+
 }

@@ -4,9 +4,11 @@ import {Observable} from "rxjs";
 import {MAIN_URL} from "./team.service";
 import {Records} from "../dto/records";
 import {Allrecords} from "../dto/allrecords";
+import {All} from "tslint/lib/rules/completedDocsRule";
 
 const URL = '/api/v1/records';
-const URL2='/api/v1/allrecords/all/'
+const URL2='/api/v1/allrecords/all/';
+const URL3='/api/v1/allrecords';
 @Injectable()
 export class RecordsService {
 
@@ -14,8 +16,8 @@ export class RecordsService {
 
 
 
-  getAllRecords(): Observable<Array<Records>>{
-    return this.http.get<Array<Records>>(MAIN_URL + URL);
+  getAllRecords(): Observable<Array<Allrecords>>{
+    return this.http.get<Array<Allrecords>>(MAIN_URL + URL3);
 
   }
 

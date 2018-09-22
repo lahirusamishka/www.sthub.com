@@ -1,8 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {Teacher} from "../../../dto/teacher";
 import {AuthService} from "../../../service/auth.service";
+import {Profileimg} from "../../../dto/profileimg";
+
 
 @Component({
   selector: 'app-settings',
@@ -11,12 +13,17 @@ import {AuthService} from "../../../service/auth.service";
 })
 export class SettingsComponent implements OnInit {
 
-  rescode:string;
 
+
+
+
+
+  rescode: string;
+  file: File;
   @ViewChild("frmTeacher") frmCustomers: NgForm;
   teacher: Teacher = new Teacher();
 
-  constructor(private teacherService: AuthService, private router: Router ) {
+  constructor(private elem:ElementRef,  private teacherService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -32,24 +39,25 @@ export class SettingsComponent implements OnInit {
   SignUpTeacher() {
 
 
-
     let booleanObservable = this.teacherService.saveTeacher(this.teacher).subscribe(
       (result) => {
         if (result) {
-          swal({
-            title: "Good job!",
-            icon: "success"
+          swal("Data Updated");
 
-          });
-          this.router.navigate(['/loginpage/teacher/tsignin']);
-        }else {
+        } else {
           swal({
             title: "Try again",
-            icon: "warning",
+
 
           });
         }
       }
     );
   }
+
+
+
+
+
+
 }
