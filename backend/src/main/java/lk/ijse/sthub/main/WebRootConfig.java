@@ -71,12 +71,6 @@ public class WebRootConfig {
 
     }
 
-    @Bean
-    public MultipartResolver multipartResolver() {
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-        multipartResolver.setMaxUploadSize(10485760);
-        multipartResolver.setMaxUploadSizePerFile(10485760);
-        return multipartResolver;
-    }
+
 
 }

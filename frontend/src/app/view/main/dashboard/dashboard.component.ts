@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   searchbar:string;
   backbutton:boolean;
   seaechNumber: number;
+  test: boolean;
 
   teacher: Teacher = new Teacher();
   selectedTeam: Team = new Team();
@@ -23,7 +24,10 @@ export class DashboardComponent implements OnInit {
   manuallySelected: boolean = false;
   teams: Array<Team> = [];
 
-  constructor(private authService: AuthService, private teamService: TeamService,private studentService:StudentService,private router:Router) {
+  constructor(private authService: AuthService,
+              private teamService: TeamService,
+              private studentService:StudentService,
+              private router:Router) {
   }
 
   ngOnInit() {
@@ -56,6 +60,7 @@ export class DashboardComponent implements OnInit {
 
     this.teamService.saveTeam(this.selectedTeam).subscribe(
       (result) => {
+        this.test = result;
         if (result) {
           swal("Team saved successfully" );
 
@@ -65,6 +70,7 @@ export class DashboardComponent implements OnInit {
         }
       }
     )
+    // print test
   }
 
   claerform(){
@@ -86,6 +92,7 @@ export class DashboardComponent implements OnInit {
   selectTeam(team: Team): void {
     // this.clear();
   /*  this.searchTeam();*/
+
     this.studentService.setSearchTeam(this.selectedTeam);
     this.selectedTeam = team;
     this.tempTeam = Object.assign({}, team);
