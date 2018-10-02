@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ParentRepository extends JpaRepository<Parent,String> {
 
-    @Query("SELECT count(p.id) from Parent p")
+    @Query(value = "SELECT count(p.id) from Parent p")
     long getTotalParents();
 
 }

@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface TeacherRepository extends JpaRepository<Teacher,String> {
 
-    @Query("SELECT count(t.id) from Teacher t")
+    @Query(value = "SELECT count(t.id) from Teacher t")
     long getTotalTeachers();
 }

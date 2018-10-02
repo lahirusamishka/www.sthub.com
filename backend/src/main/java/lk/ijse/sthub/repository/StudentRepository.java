@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public interface StudentRepository extends JpaRepository<Student,String> {
 
-    @Query("select count(s.id) from Student s")
+    @Query(value = "select count(s.id) from Student s")
     long getTotalStudents();
 
     @Query(value = "SELECT * from student",nativeQuery = true)

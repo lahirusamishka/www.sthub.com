@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface RecordBookRepository extends JpaRepository<RecordBook,String> {
 
-    @Query("SELECT count(b.id) from RecordBook b")
+    @Query(value = "SELECT count(b.id) from RecordBook b")
     long getTotalParents();
 }

@@ -10,7 +10,7 @@ public interface AllRecordsRepository extends JpaRepository<AllRecords,Long> {
 
 
 
-    @Query("SELECT count(a.id) from AllRecords a")
+    @Query(value = "SELECT count(a.id) from AllRecords a")
     long getTotalAllRecords();
 
     @Query(value = "SELECT * from allrecords",nativeQuery = true)
