@@ -28,7 +28,7 @@
     "core-js": "^2.5.4",
     "easing": "^1.1.2",
     "font-awesome": "^4.7.0",
-    "googleapis": "^33.0.0",
+    "googleapis": "^39.1.0",
     "icon-patterns": "^2.0.0",
     "ionicons": "^4.4.3",
     "jquery": "^3.3.1",
